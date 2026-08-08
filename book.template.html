@@ -1,0 +1,285 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} — Jan Walker</title>
+<meta name="description" content="{{META_DESC}}">
+<link rel="canonical" href="https://janwalkerbooks.com/books/{{SLUG}}/">
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="Jan Walker Books">
+<meta property="og:title" content="{{TITLE}} by Jan Walker">
+<meta property="og:description" content="{{META_DESC}}">
+<meta property="og:url" content="https://janwalkerbooks.com/books/{{SLUG}}/">
+<meta property="og:image" content="https://janwalkerbooks.com/covers/{{SLUG}}.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@JanWalkerBooks">
+<meta name="twitter:title" content="{{TITLE}} by Jan Walker">
+<meta name="twitter:image" content="https://janwalkerbooks.com/covers/{{SLUG}}.jpg">
+<style>
+@font-face { font-family: 'Anton'; src: url(data:font/ttf;base64,{{FONT_ANTON}}) format('truetype'); font-display: swap; }
+@font-face { font-family: 'Lora'; src: url(data:font/ttf;base64,{{FONT_LORA}}) format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Lora'; src: url(data:font/ttf;base64,{{FONT_LORA_B}}) format('truetype'); font-weight: 700; font-display: swap; }
+:root {
+  --paper: #f6f1e5; --paper-deep: #efe8d6; --card: #fcf9f0;
+  --ink: #1d2130; --ink-soft: #454a59; --ink-faint: #948e7d;
+  --accent: #d95314; --red: #c60f2e; --ok: #2e6b3f;
+  --line: #ddd3bd; --line-soft: #e8e0cc;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'Lora', Georgia, serif; font-size: 17px; line-height: 1.65; overflow-x: hidden; }
+body::after {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999; mix-blend-mode: multiply;
+}
+::selection { background: var(--accent); color: var(--paper); }
+h1, h2, h3 { font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.rule { width: 72px; height: 3px; background: var(--red); margin: 20px 0 0; }
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(246, 241, 229, .93); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 28px;
+}
+nav .logo { font-family: 'Anton'; font-size: 20px; letter-spacing: .04em; text-decoration: none; color: var(--ink); text-transform: uppercase; }
+nav .logo span { color: var(--accent); }
+nav .links { display: flex; gap: 26px; align-items: center; }
+nav .links a { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; }
+nav .links a:hover { color: var(--accent); }
+nav .links a.cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 100px; letter-spacing: .16em; }
+nav .links a.cta:hover { background: var(--accent); color: #fff; }
+@media (max-width: 760px) { nav .links a:not(.cta) { display: none; } }
+.btn {
+  display: inline-block; text-decoration: none; font-family: 'Anton'; text-transform: uppercase;
+  font-size: 16px; letter-spacing: .09em; padding: 15px 30px; border-radius: 100px;
+  color: var(--paper); background: var(--ink); border: 1px solid var(--ink);
+  transition: transform .18s ease, box-shadow .18s ease; cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -14px rgba(29,33,48,.5); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink-faint); }
+.btn.ghost:hover { border-color: var(--ink); box-shadow: none; }
+.btn.small { font-size: 14px; padding: 12px 24px; }
+
+.bhero { padding: 64px 0 56px; }
+.bhero .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 56px; align-items: start; }
+.bhero .coverbox { position: relative; }
+.bhero .coverbox img {
+  width: 100%; border-radius: 6px;
+  box-shadow: 0 36px 60px -26px rgba(29,33,48,.5), 0 8px 18px rgba(29,33,48,.14);
+  transform: rotate(-1.5deg);
+}
+.bhero .series-tag { font-family: var(--mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.bhero h1 { font-size: clamp(38px, 5.4vw, 64px); line-height: .98; margin-top: 14px; text-wrap: balance; }
+.bhero .sub { font-size: 19px; color: var(--ink-soft); margin-top: 18px; max-width: 54ch; }
+.bhero .specs { display: flex; gap: 30px; margin: 26px 0 6px; flex-wrap: wrap; }
+.bhero .spec .num { font-family: 'Anton'; font-size: 28px; color: var(--ink); }
+.bhero .spec .lbl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-top: 4px; }
+.bhero .buy { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.bhero .note { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 12px; }
+@media (max-width: 860px) {
+  .bhero .wrap { grid-template-columns: 1fr; }
+  .bhero .coverbox { max-width: 300px; margin: 0 auto; }
+}
+
+section { padding: 72px 0; }
+.sec-head h2 { font-size: clamp(32px, 4.4vw, 52px); line-height: .97; margin-top: 12px; }
+.sec-head p.sub { margin-top: 14px; font-size: 17.5px; color: var(--ink-soft); max-width: 60ch; }
+
+#inside { background: var(--paper-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.parts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; margin-top: 34px; }
+@media (max-width: 700px) { .parts { grid-template-columns: 1fr; } }
+.part { display: flex; gap: 16px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line-soft); }
+.part .num { font-family: 'Anton'; font-size: 17px; color: var(--accent); flex: none; }
+.part .pt { font-weight: 700; }
+.part .ps { font-size: 14.5px; color: var(--ink-soft); }
+
+.tryq { max-width: 720px; margin: 40px auto 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 26px 50px -28px rgba(29,33,48,.35); overflow: hidden; }
+.tryq .qtop { border-bottom: 1px solid var(--line); padding: 13px 24px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); }
+.tryq .qbody { padding: 26px 28px 30px; position: relative; }
+.tryq .q { font-family: 'Anton'; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.18; margin-bottom: 20px; text-transform: none; padding-right: 90px; }
+.opts { display: grid; gap: 9px; }
+.opt {
+  display: flex; gap: 13px; align-items: baseline; text-align: left;
+  font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.4;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 16px; cursor: pointer; width: 100%;
+  transition: border-color .15s, box-shadow .15s; color: var(--ink);
+}
+.opt .tag { font-family: 'Anton'; font-size: 14px; color: var(--accent); }
+.opt:hover:not(:disabled) { border-color: var(--ink-soft); box-shadow: 0 8px 18px -12px rgba(29,33,48,.35); }
+.opt:disabled { cursor: default; opacity: .5; }
+.opt.correct { background: #e4eddf; border-color: var(--ok); opacity: 1; }
+.opt.correct .tag { color: var(--ok); }
+.opt.wrong { background: #f5e1db; border-color: var(--red); opacity: 1; }
+.opt.wrong .tag { color: var(--red); }
+.stamp {
+  position: absolute; top: 26px; right: 26px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  padding: 6px 13px; border: 1px solid; border-radius: 100px; opacity: 0; transition: opacity .3s;
+}
+.stamp.show { opacity: 1; }
+.stamp.ok { color: var(--ok); border-color: var(--ok); background: #e4eddf; }
+.stamp.bad { color: var(--red); border-color: var(--red); background: #f5e1db; }
+.reveal { margin-top: 20px; border-top: 1px solid var(--line-soft); padding-top: 18px; display: none; font-size: 15.5px; color: var(--ink-soft); }
+.reveal.show { display: block; animation: rise .4s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.reveal b { color: var(--ink); }
+.reveal a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.reveal a:hover { text-decoration: underline; }
+
+.rules { max-width: 720px; margin: 0 auto; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: 0 24px 48px -28px rgba(29,33,48,.35); }
+.rules .rh { border-bottom: 1px solid var(--line); padding: 14px 22px; font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
+.rules ol { list-style: none; counter-reset: r; padding: 8px 0; }
+.rules li { counter-increment: r; padding: 12px 22px; display: flex; gap: 16px; align-items: baseline; font-size: 15.5px; }
+.rules li + li { border-top: 1px solid var(--line-soft); }
+.rules li::before { content: '0' counter(r); font-family: 'Anton'; color: var(--accent); font-size: 17px; }
+
+#series-more { background: var(--paper-deep); border-top: 1px solid var(--line); }
+.also { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 22px; margin-top: 34px; }
+.also a { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; text-align: center; text-decoration: none; color: var(--ink); transition: transform .18s, box-shadow .18s; }
+.also a:hover { transform: translateY(-5px); box-shadow: 0 20px 36px -22px rgba(29,33,48,.45); }
+.also img { width: 100%; border-radius: 3px; box-shadow: 0 12px 20px -12px rgba(29,33,48,.4); }
+.also .t { font-family: 'Anton'; font-size: 15px; margin-top: 10px; text-transform: uppercase; line-height: 1.15; }
+
+footer { background: var(--ink); color: #b6b0a0; padding: 44px 0 30px; }
+footer .cols { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+footer .logo { font-family: 'Anton'; color: var(--paper); font-size: 22px; text-transform: uppercase; }
+footer .logo span { color: var(--accent); }
+footer a { color: #d5cfbe; text-decoration: none; }
+footer a:hover { color: #ff7a33; }
+footer .list { display: flex; flex-direction: column; gap: 9px; font-size: 14px; }
+footer .h { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #7b7668; margin-bottom: 10px; }
+footer .fine { margin-top: 34px; padding-top: 18px; border-top: 1px solid #363b4c; font-size: 12.5px; color: #7b7668; }
+</style>
+
+<nav>
+  <a class="logo" href="/">Jan<span>&nbsp;Walker</span></a>
+  <div class="links">
+    <a href="/#quiz">The Exam</a>
+    <a href="/#garage">Cars &amp; Trucks</a>
+    <a href="/#family">Family Table</a>
+    <a class="cta" href="{{AMZ_PB}}" target="_blank" rel="noopener">Get the book</a>
+  </div>
+</nav>
+
+<header class="bhero">
+  <div class="wrap">
+    <div class="coverbox">
+      <img src="{{COVER_MAIN}}" alt="{{TITLE}} book cover">
+    </div>
+    <div>
+      <div class="series-tag">{{SERIES}}</div>
+      <h1>{{TITLE}}</h1>
+      <div class="rule"></div>
+      <p class="sub">{{PITCH}}</p>
+      <div class="specs">
+        <div class="spec"><div class="num">90</div><div class="lbl">Questions</div></div>
+        <div class="spec"><div class="num">10</div><div class="lbl">Themed parts</div></div>
+        <div class="spec"><div class="num">2</div><div class="lbl">Sources per fact</div></div>
+      </div>
+      <div class="buy">
+        <a class="btn primary" href="{{AMZ_PB}}" target="_blank" rel="noopener">Paperback on Amazon</a>
+        <a class="btn ghost" href="{{AMZ_K}}" target="_blank" rel="noopener">Kindle edition</a>
+      </div>
+      <div class="note">Ships worldwide from Amazon · Great as a gift</div>
+    </div>
+  </div>
+</header>
+
+{{PARTS_SECTION}}
+
+<section id="try">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <div class="kicker">Straight from page {{Q_PAGE_HINT}}</div>
+      <h2>Try one on the house.</h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    </div>
+    <div class="tryq">
+      <div class="qtop">{{Q_LOCATION}}</div>
+      <div class="qbody">
+        <div class="q">{{Q_PROMPT}}</div>
+        <div class="opts" id="opts">{{Q_OPTIONS}}</div>
+        <div class="stamp" id="stamp"></div>
+        <div class="reveal" id="reveal">{{Q_STORY}}<br><b>There are 89 more where that came from.</b> <a href="{{AMZ_PB}}" target="_blank" rel="noopener">Get {{SHORT}} on Amazon &rarr;</a> or <a href="/#quiz">take the full entrance exam &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="promise">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <div class="kicker">Why this one is different</div>
+      <h2>House rules. Every book.</h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    </div>
+    <div class="rules" style="margin-top:36px">
+      <div class="rh">The Jan Walker standard</div>
+      <ol>
+        <li>90 questions. 10 themed parts. No padding.</li>
+        <li>Every fact verified against two independent sources.</li>
+        <li>Answers explained — the story behind the number.</li>
+        <li>Disputed facts flagged as disputed. Honestly.</li>
+        <li>Built to be read out loud and argued over.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="series-more">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Keep the argument going</div>
+      <h2>Also on this shelf.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="also">{{ALSO_CARDS}}</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo">Jan<span>&nbsp;Walker</span></div>
+        <p style="max-width:34ch;font-size:14px;margin-top:12px">Trivia &amp; fun facts, verified twice.<br>Paperback &amp; Kindle on Amazon.</p>
+      </div>
+      <div class="list">
+        <div class="h">Explore</div>
+        <a href="/">All books</a>
+        <a href="/#quiz">The Entrance Exam</a>
+        <a href="/#about">About Jan Walker</a>
+      </div>
+      <div class="list">
+        <div class="h">Elsewhere</div>
+        <a href="https://x.com/JanWalkerBooks" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://www.pinterest.com/janwalkerbooks/" target="_blank" rel="noopener">Pinterest</a>
+        <a href="https://www.amazon.com/Jan-Walker/e/B0H3W7P7KR" target="_blank" rel="noopener">Amazon author page</a>
+      </div>
+    </div>
+    <div class="fine">© 2026 Jan Walker · All book links lead to Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
+  </div>
+</footer>
+
+<script>
+const CORRECT = {{Q_CORRECT}};
+let answered = false;
+document.querySelectorAll('#opts .opt').forEach((btn, i) => btn.addEventListener('click', () => {
+  if (answered) return;
+  answered = true;
+  document.querySelectorAll('#opts .opt').forEach((b, bi) => {
+    b.disabled = true;
+    if (bi === CORRECT) b.classList.add('correct');
+    else if (bi === i) b.classList.add('wrong');
+  });
+  const st = document.getElementById('stamp');
+  st.textContent = i === CORRECT ? 'Correct' : 'Wrong';
+  st.className = 'stamp show ' + (i === CORRECT ? 'ok' : 'bad');
+  document.getElementById('reveal').classList.add('show');
+}));
+</script>

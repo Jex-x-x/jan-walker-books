@@ -2,6 +2,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jan Walker — Books That Start Arguments</title>
 <meta name="description" content="Trivia & Fun Facts books by Jan Walker. 90 verified questions each, across cars, trucks and the people at your table. Paperback & Kindle on Amazon.">
+<link rel="canonical" href="https://janwalkerbooks.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jan Walker Books">
+<meta property="og:title" content="Books That Start Arguments — take the Entrance Exam">
+<meta property="og:description" content="Ten trivia questions straight from the books. Every fact verified twice. Miss one and we'll tell you which book would have saved you.">
+<meta property="og:url" content="https://janwalkerbooks.com/">
+<meta property="og:image" content="https://janwalkerbooks.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@JanWalkerBooks">
+<meta name="twitter:title" content="Books That Start Arguments — take the Entrance Exam">
+<meta name="twitter:description" content="Ten trivia questions straight from the books. Every fact verified twice.">
+<meta name="twitter:image" content="https://janwalkerbooks.com/og.jpg">
 <style>
 @font-face { font-family: 'Anton'; src: url(data:font/ttf;base64,{{FONT_ANTON}}) format('truetype'); font-display: swap; }
 @font-face { font-family: 'Lora'; src: url(data:font/ttf;base64,{{FONT_LORA}}) format('truetype'); font-weight: 400; font-display: swap; }
@@ -214,6 +228,39 @@ section { padding: 92px 0; }
 .progress { height: 4px; background: var(--line-soft); }
 .progress i { display: block; height: 100%; background: var(--accent); width: 0%; transition: width .35s ease; }
 
+/* ---------- QUIZ: треки, стрик, шеринг, рекап ---------- */
+.tracks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 6px 0 2px; }
+@media (max-width: 700px) { .tracks { grid-template-columns: 1fr; } }
+.track {
+  text-align: left; background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px 18px 16px; cursor: pointer; font-family: 'Lora', Georgia, serif; color: var(--ink);
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.track:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 14px 26px -16px rgba(29,33,48,.4); }
+.track .tt { font-family: 'Anton'; font-size: 20px; text-transform: uppercase; }
+.track .td { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.45; }
+.track .tc { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-top: 10px; font-weight: 700; }
+.exam .intro-note { text-align: center; font-size: 15px; color: var(--ink-soft); margin-top: 16px; }
+.streak {
+  font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  color: var(--accent); opacity: 0; transition: opacity .25s;
+}
+.streak.on { opacity: 1; }
+@keyframes scorepulse { 0% { transform: scale(1); } 40% { transform: scale(1.5); } 100% { transform: scale(1); } }
+.exam-top .score b { display: inline-block; }
+.exam-top .score b.pulse { animation: scorepulse .45s ease; color: var(--ok); }
+.emoji-grid { font-size: 22px; letter-spacing: 3px; margin-top: 14px; word-break: break-all; }
+.share-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.copied-note { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ok); margin-top: 10px; min-height: 16px; }
+.recap { margin-top: 28px; text-align: left; border-top: 1px solid var(--line-soft); padding-top: 20px; }
+.recap .rh2 { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+.recap .miss { display: flex; gap: 14px; align-items: center; padding: 10px 0; }
+.recap .miss + .miss { border-top: 1px dashed var(--line-soft); }
+.recap .miss img { width: 46px; border-radius: 3px; box-shadow: 0 6px 12px -6px rgba(29,33,48,.4); flex: none; }
+.recap .miss .mt { font-size: 14.5px; line-height: 1.4; color: var(--ink-soft); }
+.recap .miss .mt a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.recap .miss .mt a:hover { text-decoration: underline; }
+
 /* ---------- SHELF ---------- */
 .shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 28px; }
 .book {
@@ -355,14 +402,15 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
 <section id="quiz">
   <div class="wrap">
     <div class="sec-head rv" style="text-align:center">
-      <div class="kicker">Ten questions · straight from the books</div>
+      <div class="kicker">Straight from the books · shuffled every time</div>
       <h2>The entrance exam.</h2>
       <div class="rule center"></div>
       <p class="sub" style="margin-left:auto;margin-right:auto">Every question below is printed in one of the books. Miss one and we'll tell you which book would have saved you.</p>
     </div>
     <div class="exam rv d1">
       <div class="exam-top">
-        <div class="qnum" id="qnum">Q 01 / 10</div>
+        <div class="qnum" id="qnum">Choose your exam</div>
+        <div class="streak" id="streak"></div>
         <div class="score">SCORE&nbsp;<b id="score">0</b></div>
       </div>
       <div class="exam-body" id="exam-body"></div>
@@ -417,7 +465,7 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
       <div class="rule"></div>
       <p>Jan Walker writes trivia books for people who correct the television. Cars and trucks with real cult followings, plus the family series about the people who taught you everything — whether you asked or not.</p>
       <p>No AI-scraped listicles bound into a paperback. Every question is cross-referenced against <b>two independent sources</b> — race records, homologation papers, patent filings, USDA tables — before it earns a page. When estimates disagree, the book says so honestly.</p>
-      <p>Available worldwide in <b>paperback and Kindle</b>. Follow along on <a class="x" href="https://x.com/JanWalkerBooks" target="_blank" rel="noopener">X&nbsp;@JanWalkerBooks</a> and <a class="x" href="https://pinterest.com/janwalkerbooks" target="_blank" rel="noopener">Pinterest</a>.</p>
+      <p>Available worldwide in <b>paperback and Kindle</b>. Follow along on <a class="x" href="https://x.com/JanWalkerBooks" target="_blank" rel="noopener">X&nbsp;@JanWalkerBooks</a> and <a class="x" href="https://www.pinterest.com/janwalkerbooks/" target="_blank" rel="noopener">Pinterest</a>.</p>
     </div>
     <div class="rules rv d1">
       <div class="rh">House rules · every book</div>
@@ -448,8 +496,8 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
       <div class="list">
         <div class="h">Elsewhere</div>
         <a href="https://x.com/JanWalkerBooks" target="_blank" rel="noopener">X / Twitter</a>
-        <a href="https://pinterest.com/janwalkerbooks" target="_blank" rel="noopener">Pinterest</a>
-        <a href="https://www.amazon.com/stores/Jan-Walker/author/B0F9Y6B9RN" target="_blank" rel="noopener">Amazon author page</a>
+        <a href="https://www.pinterest.com/janwalkerbooks/" target="_blank" rel="noopener">Pinterest</a>
+        <a href="https://www.amazon.com/Jan-Walker/e/B0H3W7P7KR" target="_blank" rel="noopener">Amazon author page</a>
       </div>
     </div>
     <div class="fine">© 2026 Jan Walker · All book links lead to Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
@@ -526,32 +574,115 @@ const QUESTIONS = [
     q: 'Which family birthday does mom remember before the person whose birthday it is?',
     o: ['Her own', 'Yours', 'Her sister-in-law’s', 'The dog’s'], c: 2,
     s: 'Mom has it flagged by August 12th. The sister-in-law forgets until September. Mom is the family group chat’s memory backup layer.' },
+  { src: 'Toyota Tacoma Trivia', slug: 'tacoma', asin: 'B0H3LRD3YF',
+    q: 'In which model year did the TRD Pro trim first appear on the Tacoma?',
+    o: ['2013', '2014', '2015', '2016'], c: 2,
+    s: 'Unveiled at the 2014 Chicago Auto Show, TRD Pro hit dealers as a 2015 model. The launch trio — Inferno, Super White, Black — became collector shorthand.' },
+  { src: 'Ford F-150 Trivia', slug: 'f150', asin: 'B0H3NYC85Q',
+    q: 'The 3.5L EcoBoost V6 debuted in the F-150 for what model year?',
+    o: ['2009', '2010', '2011', '2013'], c: 2,
+    s: 'Ford’s twin-turbo V6 landed in 2011 at 365 hp — the first mass-market turbo V6 in any half-ton. Within twelve months it outsold the 5.0 V8. The skeptics went quiet.' },
+  { src: 'Toyota 4Runner Trivia', slug: '4runner', asin: 'B0H41QVRGC',
+    q: 'The N280 4Runner ran on the same fundamental chassis for how many model years?',
+    o: ['10', '13', '15', '16'], c: 2,
+    s: 'Toyota kept the N280 in production 15 model years — the longest single-generation run of any modern midsize SUV. A cult formed around the receipt.' },
+  { src: 'Toyota Tundra Trivia', slug: 'tundra', asin: 'B0H49SCLH2',
+    q: 'The Tundra’s 5.7L V8 debuted in what model year, at what horsepower?',
+    o: ['2005 / 350 hp', '2007 / 381 hp', '2007 / 407 hp', '2008 / 420 hp'], c: 1,
+    s: 'The 3UR-FE launched for 2007 at 381 hp and 401 lb-ft, then ran nearly unchanged through 2021 — outlasting several rival V8s entirely.' },
+  { src: 'Daughter Trivia', slug: 'daughter', asin: 'B0H7SS3HSH',
+    q: 'How often does a typical 8–10-year-old girl’s “best friend” change, per researchers?',
+    o: ['Every 2–3 weeks', 'Every school semester', 'Every school year', 'Once, in kindergarten'], c: 0,
+    s: 'The “best friend” in girl-social groups can rotate every 2–3 weeks. It’s a real feature of pre-teen identity formation. The tears are real. So is next week’s.' },
+  { src: 'Son Trivia', slug: 'son', asin: 'B0H7SWYJCR',
+    q: 'Your 9-year-old insists his pillow must face the door. The reason he gives?',
+    o: ['“The vents blow wrong”', '“I don’t want to fall off”', '“The label has to be on the right”', '“I saw it on TikTok”'], c: 2,
+    s: 'Kids commit fiercely to arbitrary rituals — “just-right behavior,” peaking at 8–11. He’ll grow out of it. Or he’ll design airport terminals.' },
 ];
 
 function card(b) {
   const a = document.createElement('a');
   a.className = 'book rv';
-  a.href = AMZ(b.asin);
-  a.target = '_blank'; a.rel = 'noopener';
+  a.href = `/books/${b.slug}/`;
   a.innerHTML = `${b.badge ? `<span class="badge">${b.badge}</span>` : ''}
     <img src="${COVERS[b.slug]}" alt="${b.t} book cover" loading="lazy">
     <div class="t">${b.t}</div>
     <div class="hook">${b.hook}</div>
-    <div class="go">Paperback &amp; Kindle &rarr;</div>`;
+    <div class="go">See inside &rarr;</div>`;
   return a;
 }
 CARS.forEach(b => document.getElementById('car-shelf').appendChild(card(b)));
 FAMILY.forEach(b => document.getElementById('family-shelf').appendChild(card(b)));
 
-let qi = 0, score = 0, answered = false;
+const CAR_SLUGS = new Set(CARS.map(b => b.slug));
+const FAM_SLUGS = new Set(FAMILY.map(b => b.slug));
+const TRACKS = {
+  garage: { name: 'The Garage', desc: 'Cars & trucks only. JDM legends, half-ton math, movie SUVs.', count: 8,
+    pool: () => QUESTIONS.filter(q => CAR_SLUGS.has(q.slug)),
+    titles: [['Master of the Garage', 'Either you own a torque wrench or you wrote these books.'],
+             ['Garage-certified.', 'You know your stuff — and now you know exactly where the gaps are.'],
+             ['Dangerous at dinner.', 'Enough to start the argument, not enough to finish it. That is what the books are for.'],
+             ['The garage won.', 'Respectfully: the cars have been keeping secrets from you. The books have them all.']] },
+  family: { name: 'The Family Table', desc: 'Grandpa’s battery trick, Pyrex, steak temps, best-friend math.', count: 6,
+    pool: () => QUESTIONS.filter(q => FAM_SLUGS.has(q.slug)),
+    titles: [['Keeper of the Table', 'You have clearly been paying attention at dinner for decades.'],
+             ['Family historian.', 'Solid. But somebody at your table still knows the ones you missed.'],
+             ['Dangerous at dinner.', 'Enough to start the argument, not enough to finish it. That is what the books are for.'],
+             ['The table won.', 'Respectfully: grandma has been carrying you. The books can fix that.']] },
+  full: { name: 'The Full Exam', desc: 'Ten shuffled questions across the whole shelf. No mercy.', count: 10,
+    pool: () => QUESTIONS.slice(),
+    titles: [['Suspiciously good.', 'Either you wrote these books or you should be fact-checking them.'],
+             ['Certified know-it-all.', 'The good kind. Each book carries 90 more of these, with the stories behind every answer.'],
+             ['Dangerous at dinner.', 'Enough to start the argument, not enough to finish it. That is what the books are for.'],
+             ['The books won.', 'Respectfully: the television has been correcting YOU. Good news — every answer is explained in print.']] }
+};
+
+let track = null, quiz = [], qi = 0, score = 0, streak = 0, answered = false, results = [];
 const LET = ['A', 'B', 'C', 'D'];
 const body = document.getElementById('exam-body');
+const streakEl = document.getElementById('streak');
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function renderStart() {
+  track = null; qi = 0; score = 0; streak = 0; results = [];
+  document.getElementById('score').textContent = 0;
+  document.getElementById('qnum').textContent = 'Choose your exam';
+  document.getElementById('bar').style.width = '0%';
+  streakEl.className = 'streak';
+  body.innerHTML = `
+    <div class="tracks">${Object.entries(TRACKS).map(([key, tr]) => `
+      <button class="track" data-track="${key}">
+        <div class="tt">${tr.name}</div>
+        <div class="td">${tr.desc}</div>
+        <div class="tc">${tr.count} questions &rarr;</div>
+      </button>`).join('')}
+    </div>
+    <p class="intro-note">Questions are pulled straight from the books and reshuffled every run.</p>`;
+  body.querySelectorAll('.track').forEach(btn => btn.addEventListener('click', () => startTrack(btn.dataset.track)));
+}
+
+function startTrack(key) {
+  track = key;
+  quiz = shuffle(TRACKS[key].pool()).slice(0, TRACKS[key].count);
+  qi = 0; score = 0; streak = 0; results = [];
+  document.getElementById('score').textContent = 0;
+  renderQ();
+}
 
 function renderQ() {
   answered = false;
-  const q = QUESTIONS[qi];
-  document.getElementById('qnum').textContent = `Q ${String(qi + 1).padStart(2, '0')} / ${QUESTIONS.length}`;
-  document.getElementById('bar').style.width = `${(qi / QUESTIONS.length) * 100}%`;
+  const q = quiz[qi];
+  document.getElementById('qnum').textContent = `Q ${String(qi + 1).padStart(2, '0')} / ${quiz.length}`;
+  document.getElementById('bar').style.width = `${(qi / quiz.length) * 100}%`;
+  streakEl.textContent = streak >= 2 ? `\uD83D\uDD25 ${streak} in a row` : '';
+  streakEl.className = streak >= 2 ? 'streak on' : 'streak';
   body.innerHTML = `
     <div class="src">From: ${q.src}</div>
     <div class="q">${q.q}</div>
@@ -561,16 +692,27 @@ function renderQ() {
       <img src="${COVERS[q.slug]}" alt="">
       <div class="story">${q.s}<br><b>Want the other 89?</b> <a href="${AMZ(q.asin)}" target="_blank" rel="noopener">${q.src} on Amazon &rarr;</a></div>
     </div>
-    <div class="next-row" id="next-row"><button class="btn primary small" id="next">${qi === QUESTIONS.length - 1 ? 'See my verdict' : 'Next question'} &rarr;</button></div>`;
+    <div class="next-row" id="next-row"><button class="btn primary small" id="next">${qi === quiz.length - 1 ? 'See my verdict' : 'Next question'} &rarr;</button></div>`;
   body.querySelectorAll('.opt').forEach(btn => btn.addEventListener('click', () => answer(+btn.dataset.i)));
 }
 
 function answer(i) {
   if (answered) return;
   answered = true;
-  const q = QUESTIONS[qi];
+  const q = quiz[qi];
   const ok = i === q.c;
-  if (ok) { score++; document.getElementById('score').textContent = score; }
+  results.push({ q, ok });
+  if (ok) {
+    score++; streak++;
+    const sc = document.getElementById('score');
+    sc.textContent = score;
+    sc.classList.add('pulse');
+    sc.addEventListener('animationend', () => sc.classList.remove('pulse'), { once: true });
+  } else {
+    streak = 0;
+  }
+  streakEl.textContent = streak >= 2 ? `\uD83D\uDD25 ${streak} in a row` : '';
+  streakEl.className = streak >= 2 ? 'streak on' : 'streak';
   body.querySelectorAll('.opt').forEach((btn, bi) => {
     btn.disabled = true;
     if (bi === q.c) btn.classList.add('correct');
@@ -583,36 +725,66 @@ function answer(i) {
   document.getElementById('next-row').classList.add('show');
   document.getElementById('next').addEventListener('click', () => {
     qi++;
-    if (qi < QUESTIONS.length) renderQ(); else finale();
+    if (qi < quiz.length) renderQ(); else finale();
   });
+}
+
+function verdict() {
+  const r = score / quiz.length;
+  const t = TRACKS[track].titles;
+  if (r >= 0.9) return t[0];
+  if (r >= 0.7) return t[1];
+  if (r >= 0.4) return t[2];
+  return t[3];
 }
 
 function finale() {
   document.getElementById('bar').style.width = '100%';
-  document.getElementById('qnum').textContent = 'Final';
-  let v, p;
-  if (score >= 9)      { v = 'Suspiciously good.';   p = 'Either you wrote these books or you should be fact-checking them. The full set goes 90 questions deep per book — find your next argument below.'; }
-  else if (score >= 7) { v = 'Garage-certified.';    p = 'You know your stuff — and now you know exactly where the gaps are. Each book carries 90 of these, with the stories behind every answer.'; }
-  else if (score >= 4) { v = 'Dangerous at dinner.'; p = 'Enough to start the argument, not enough to finish it. The books exist for exactly this. Ninety questions each, every fact verified twice.'; }
-  else                 { v = 'The books won.';       p = 'Respectfully: the television has been correcting YOU. Good news — every one of these questions lives in a book with 89 friends and full explanations.'; }
+  document.getElementById('qnum').textContent = TRACKS[track].name;
+  streakEl.className = 'streak';
+  const [title, note] = verdict();
+  const grid = results.map(r => r.ok ? '\uD83D\uDFE7' : '\u2B1C').join('');
+  const shareText = `The Entrance Exam \u00B7 ${TRACKS[track].name}: ${score}/${quiz.length} \u2014 ${title}\n${grid}\nTake it at janwalkerbooks.com`;
+  const missed = results.filter(r => !r.ok);
   body.innerHTML = `
     <div class="final">
-      <div class="big">${score}<span>/${QUESTIONS.length}</span></div>
-      <div class="verdict">${v}</div>
-      <p>${p}</p>
-      <div class="ctas">
-        <a class="btn primary small" href="#garage">Browse the garage</a>
-        <a class="btn ghost small" href="#family">Meet the family</a>
-        <button class="btn ghost small" id="again">Retake</button>
+      <div class="big">${score}<span>/${quiz.length}</span></div>
+      <div class="verdict">${title}</div>
+      <p>${note}</p>
+      <div class="emoji-grid">${grid}</div>
+      <div class="share-row">
+        <button class="btn primary small" id="copyres">Copy my result</button>
+        <a class="btn ghost small" id="xshare" href="https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}" target="_blank" rel="noopener">Post it on X</a>
+        <button class="btn ghost small" id="again">Try another exam</button>
       </div>
+      <div class="copied-note" id="copied"></div>
+      ${missed.length ? `
+      <div class="recap">
+        <div class="rh2">Where the books beat you</div>
+        ${missed.map(m => `
+          <div class="miss">
+            <img src="${COVERS[m.q.slug]}" alt="">
+            <div class="mt">${m.q.q}<br><a href="${AMZ(m.q.asin)}" target="_blank" rel="noopener">${m.q.src} would have saved you &rarr;</a></div>
+          </div>`).join('')}
+      </div>` : `
+      <div class="recap">
+        <div class="rh2">Zero misses</div>
+        <div class="miss"><div class="mt">The books demand a rematch. <a href="#garage">Pick your next opponent &rarr;</a></div></div>
+      </div>`}
     </div>`;
-  document.getElementById('again').addEventListener('click', () => {
-    qi = 0; score = 0;
-    document.getElementById('score').textContent = 0;
-    renderQ();
+  document.getElementById('again').addEventListener('click', renderStart);
+  document.getElementById('copyres').addEventListener('click', async () => {
+    const note = document.getElementById('copied');
+    try {
+      await navigator.clipboard.writeText(shareText);
+      note.textContent = 'Copied \u2014 paste it anywhere';
+    } catch (e) {
+      window.prompt('Copy your result:', shareText.replace(/\n/g, ' '));
+      note.textContent = '';
+    }
   });
 }
-renderQ();
+renderStart();
 
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
