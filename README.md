@@ -6,4 +6,4 @@ Single self-contained `index.html` — fonts and covers inlined, no external req
 - `index.template.html` — source template (tokens `{{FONT_*}}`, `{{COVER_*}}`)
 - `build.py` — inlines fonts + covers, writes `index.html`
 
-Live: https://jex-x-x.github.io/jan-walker-books/
+Live: https://janwalkerbooks.com
