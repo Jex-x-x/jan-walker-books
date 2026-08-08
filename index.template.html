@@ -1,0 +1,621 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jan Walker — Books That Start Arguments</title>
+<meta name="description" content="Trivia & Fun Facts books by Jan Walker. 90 verified questions each, across cars, trucks and the people at your table. Paperback & Kindle on Amazon.">
+<style>
+@font-face { font-family: 'Anton'; src: url(data:font/ttf;base64,{{FONT_ANTON}}) format('truetype'); font-display: swap; }
+@font-face { font-family: 'Lora'; src: url(data:font/ttf;base64,{{FONT_LORA}}) format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Lora'; src: url(data:font/ttf;base64,{{FONT_LORA_B}}) format('truetype'); font-weight: 700; font-display: swap; }
+
+:root {
+  --paper: #f6f1e5;
+  --paper-deep: #efe8d6;
+  --card: #fcf9f0;
+  --ink: #1d2130;
+  --ink-soft: #454a59;
+  --ink-faint: #948e7d;
+  --accent: #d95314;
+  --red: #c60f2e;
+  --sage: #5f6f58;
+  --sage-paper: #e9ecdf;
+  --ok: #2e6b3f;
+  --line: #ddd3bd;
+  --line-soft: #e8e0cc;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999; mix-blend-mode: multiply;
+}
+::selection { background: var(--accent); color: var(--paper); }
+
+h1, h2, h3, .display { font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+.kicker {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--accent); font-weight: 700;
+}
+/* красная линейка с обложек */
+.rule { width: 72px; height: 3px; background: var(--red); margin: 20px 0 0; }
+.rule.center { margin-left: auto; margin-right: auto; }
+
+/* ---------- NAV ---------- */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(246, 241, 229, .93); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 28px;
+}
+nav .logo { font-family: 'Anton'; font-size: 20px; letter-spacing: .04em; text-decoration: none; color: var(--ink); text-transform: uppercase; }
+nav .logo span { color: var(--accent); }
+nav .links { display: flex; gap: 26px; align-items: center; }
+nav .links a { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+nav .links a:hover { color: var(--accent); }
+nav .links a.cta {
+  background: var(--ink); color: var(--paper); padding: 9px 18px;
+  border-radius: 100px; letter-spacing: .16em;
+  transition: background .15s;
+}
+nav .links a.cta:hover { background: var(--accent); color: #fff; }
+@media (max-width: 760px) { nav .links a:not(.cta) { display: none; } }
+
+/* ---------- HERO ---------- */
+.hero { position: relative; padding: 84px 0 56px; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: center; }
+.hero .over {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.hero h1 {
+  font-size: clamp(54px, 8vw, 112px);
+  line-height: .94; letter-spacing: .005em;
+  margin: 20px 0 0;
+}
+.hero h1 .row2 { color: var(--accent); }
+.hero .rule { width: 110px; height: 4px; margin: 28px 0; }
+.hero p.lede { font-size: 19px; max-width: 46ch; color: var(--ink-soft); }
+.hero p.lede b { color: var(--ink); }
+.hero .ctas { margin-top: 34px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn {
+  display: inline-block; text-decoration: none; font-family: 'Anton'; text-transform: uppercase;
+  font-size: 16px; letter-spacing: .09em; padding: 15px 30px; border-radius: 100px;
+  color: var(--paper); background: var(--ink); border: 1px solid var(--ink);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -14px rgba(29, 33, 48, .5); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { box-shadow: 0 14px 28px -12px rgba(217, 83, 20, .55); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink-faint); }
+.btn.ghost:hover { border-color: var(--ink); box-shadow: none; }
+
+.hero .stats { display: flex; gap: 40px; margin-top: 46px; flex-wrap: wrap; }
+.hero .stat .num { font-family: 'Anton'; font-size: 38px; line-height: 1; color: var(--ink); }
+.hero .stat .num em { font-style: normal; color: var(--accent); }
+.hero .stat .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); margin-top: 7px; }
+
+.fan { position: relative; height: 470px; }
+.fan img {
+  position: absolute; width: 212px; border-radius: 5px;
+  box-shadow: 0 30px 50px -22px rgba(29, 33, 48, .45), 0 6px 14px rgba(29, 33, 48, .12);
+  transition: transform .3s cubic-bezier(.2, .8, .3, 1.1);
+}
+.fan img:nth-child(1) { left: 5%;  top: 112px; transform: rotate(-7deg); z-index: 1; }
+.fan img:nth-child(2) { left: 27%; top: 62px;  transform: rotate(-3deg); z-index: 2; }
+.fan img:nth-child(3) { left: 49%; top: 32px;  transform: rotate(2deg);  z-index: 3; }
+.fan img:nth-child(4) { left: 31%; top: 208px; transform: rotate(4deg);  z-index: 4; }
+.fan img:nth-child(5) { left: 56%; top: 188px; transform: rotate(-4deg); z-index: 5; }
+.fan img:hover { transform: rotate(0deg) translateY(-12px) scale(1.04); z-index: 9; }
+@media (max-width: 900px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .fan { height: 320px; margin-top: 8px; }
+  .fan img { width: 148px; }
+  .fan img:nth-child(1) { left: 0; top: 60px; }
+  .fan img:nth-child(2) { left: 19%; top: 30px; }
+  .fan img:nth-child(3) { left: 39%; top: 10px; }
+  .fan img:nth-child(4) { left: 58%; top: 40px; }
+  .fan img:nth-child(5) { left: 75%; top: 80px; }
+}
+
+/* ---------- TICKER ---------- */
+.ticker {
+  overflow: hidden; padding: 14px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--paper-deep);
+}
+.ticker .strip { display: flex; width: max-content; animation: tick 52s linear infinite; }
+.ticker:hover .strip { animation-play-state: paused; }
+.ticker span { font-family: var(--mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; padding: 0 20px; color: var(--ink-soft); }
+.ticker span::after { content: '·'; color: var(--accent); margin-left: 40px; font-weight: 700; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* ---------- SECTIONS ---------- */
+section { padding: 92px 0; }
+.sec-head { margin-bottom: 50px; }
+.sec-head h2 { font-size: clamp(38px, 5.2vw, 68px); line-height: .96; margin-top: 12px; text-wrap: balance; }
+.sec-head p.sub { margin-top: 18px; font-size: 18px; color: var(--ink-soft); max-width: 60ch; }
+
+/* ---------- QUIZ ---------- */
+#quiz { background: var(--paper-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.exam {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 30px 60px -30px rgba(29, 33, 48, .35);
+  max-width: 780px; margin: 0 auto; overflow: hidden;
+}
+.exam-top {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  border-bottom: 1px solid var(--line); padding: 15px 26px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.exam-top .score b { color: var(--accent); }
+.exam-body { padding: 32px 32px 36px; position: relative; }
+.exam .src { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); }
+.exam .q { font-family: 'Anton'; font-size: clamp(22px, 3vw, 30px); line-height: 1.16; margin: 14px 0 24px; text-transform: none; letter-spacing: .01em; padding-right: 96px; }
+.opts { display: grid; gap: 10px; }
+.opt {
+  display: flex; gap: 14px; align-items: baseline; text-align: left;
+  font-family: 'Lora', Georgia, serif; font-size: 16.5px; line-height: 1.4;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 18px; cursor: pointer; width: 100%;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+  color: var(--ink);
+}
+.opt .tag { font-family: 'Anton'; font-size: 15px; color: var(--accent); }
+.opt:hover:not(:disabled) { border-color: var(--ink-soft); box-shadow: 0 8px 18px -12px rgba(29, 33, 48, .35); background: var(--card); }
+.opt:disabled { cursor: default; opacity: .5; }
+.opt.correct { background: #e4eddf; border-color: var(--ok); opacity: 1; }
+.opt.correct .tag { color: var(--ok); }
+.opt.wrong { background: #f5e1db; border-color: var(--red); opacity: 1; }
+.opt.wrong .tag { color: var(--red); }
+
+.stamp {
+  position: absolute; top: 34px; right: 32px;
+  font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  padding: 6px 14px; border: 1px solid; border-radius: 100px;
+  opacity: 0; transition: opacity .3s ease;
+  pointer-events: none;
+}
+.stamp.show { opacity: 1; }
+.stamp.ok { color: var(--ok); border-color: var(--ok); background: #e4eddf; }
+.stamp.bad { color: var(--red); border-color: var(--red); background: #f5e1db; }
+
+.reveal-box { margin-top: 24px; border-top: 1px solid var(--line-soft); padding-top: 22px; display: none; }
+.reveal-box.show { display: flex; gap: 18px; align-items: flex-start; animation: rise .4s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.reveal-box img { width: 72px; border-radius: 4px; box-shadow: 0 10px 18px -10px rgba(29, 33, 48, .45); flex: none; }
+.reveal-box .story { font-size: 15.5px; color: var(--ink-soft); }
+.reveal-box .story b { color: var(--ink); }
+.reveal-box .story a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.reveal-box .story a:hover { text-decoration: underline; }
+.exam .next-row { margin-top: 26px; text-align: right; display: none; }
+.exam .next-row.show { display: block; }
+.btn.small { font-size: 14px; padding: 12px 24px; }
+
+.exam .final { text-align: center; padding: 18px 0 6px; }
+.exam .final .big { font-family: 'Anton'; font-size: clamp(52px, 8vw, 84px); line-height: 1; }
+.exam .final .big span { color: var(--accent); }
+.exam .final .verdict { font-family: 'Anton'; font-size: 24px; margin-top: 8px; }
+.exam .final p { color: var(--ink-soft); max-width: 46ch; margin: 14px auto 0; }
+.exam .final .ctas { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.progress { height: 4px; background: var(--line-soft); }
+.progress i { display: block; height: 100%; background: var(--accent); width: 0%; transition: width .35s ease; }
+
+/* ---------- SHELF ---------- */
+.shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 28px; }
+.book {
+  position: relative; background: var(--card);
+  border: 1px solid var(--line); border-radius: 12px;
+  padding: 20px 20px 22px; text-align: center; text-decoration: none; color: var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+  display: flex; flex-direction: column;
+}
+.book:hover { transform: translateY(-6px); box-shadow: 0 26px 44px -24px rgba(29, 33, 48, .45); }
+.book img { width: 100%; border-radius: 4px; box-shadow: 0 16px 26px -16px rgba(29, 33, 48, .4); }
+.book .t { font-family: 'Anton'; font-size: 19px; margin-top: 16px; line-height: 1.1; text-transform: uppercase; }
+.book .hook { font-size: 14px; color: var(--ink-soft); margin-top: 8px; line-height: 1.5; flex: 1; }
+.book .go { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-top: 14px; font-weight: 700; }
+.book .badge {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700; letter-spacing: .14em;
+  background: var(--red); color: #fff; padding: 5px 11px; border-radius: 100px;
+  text-transform: uppercase;
+}
+
+/* ---------- FAMILY ---------- */
+#family { background: var(--sage-paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+#family .kicker { color: var(--sage); }
+#family .rule { background: var(--sage); }
+#family .book .go { color: var(--sage); }
+
+/* ---------- SEASONAL ---------- */
+.season {
+  display: grid; grid-template-columns: 190px 1fr auto; gap: 38px; align-items: center;
+  background: var(--ink); color: var(--paper); border-radius: 14px;
+  box-shadow: 0 34px 60px -32px rgba(29, 33, 48, .7);
+  padding: 38px 44px;
+}
+.season img { width: 100%; border-radius: 5px; transform: rotate(-3deg); box-shadow: 0 18px 30px -12px rgba(0, 0, 0, .55); }
+.season h3 { font-size: 32px; }
+.season h3 span { color: #ff7a33; }
+.season p { color: #c9c3b2; margin-top: 12px; max-width: 52ch; }
+.season .btn { background: transparent; border: 1px solid var(--paper); color: var(--paper); }
+.season .btn:hover { background: var(--accent); border-color: var(--accent); box-shadow: none; }
+@media (max-width: 860px) { .season { grid-template-columns: 1fr; text-align: center; } .season img { max-width: 170px; margin: 0 auto; } }
+
+/* ---------- ABOUT ---------- */
+#about .wrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 64px; align-items: start; }
+#about h2 { font-size: clamp(34px, 4.4vw, 54px); margin-top: 12px; }
+#about p { margin-top: 18px; color: var(--ink-soft); }
+#about p b { color: var(--ink); }
+#about a.x { color: var(--accent); font-weight: 700; text-decoration: none; }
+#about a.x:hover { text-decoration: underline; }
+.rules { margin-top: 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: 0 24px 48px -28px rgba(29, 33, 48, .35); }
+.rules .rh { border-bottom: 1px solid var(--line); padding: 14px 22px; font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
+.rules ol { list-style: none; counter-reset: r; padding: 8px 0; }
+.rules li { counter-increment: r; padding: 13px 22px; display: flex; gap: 16px; align-items: baseline; font-size: 15.5px; }
+.rules li + li { border-top: 1px solid var(--line-soft); }
+.rules li::before { content: '0' counter(r); font-family: 'Anton'; color: var(--accent); font-size: 17px; }
+@media (max-width: 860px) { #about .wrap { grid-template-columns: 1fr; } }
+
+/* ---------- FOOTER ---------- */
+footer { background: var(--ink); color: #b6b0a0; padding: 50px 0 32px; }
+footer .cols { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+footer .logo { font-family: 'Anton'; color: var(--paper); font-size: 22px; text-transform: uppercase; }
+footer .logo span { color: var(--accent); }
+footer a { color: #d5cfbe; text-decoration: none; }
+footer a:hover { color: #ff7a33; }
+footer .list { display: flex; flex-direction: column; gap: 9px; font-size: 14px; }
+footer .h { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #7b7668; margin-bottom: 10px; }
+footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4c; font-size: 12.5px; color: #7b7668; }
+
+/* ---------- REVEAL ---------- */
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.rv.in { opacity: 1; transform: none; }
+.rv.d1 { transition-delay: .08s; } .rv.d2 { transition-delay: .16s; } .rv.d3 { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+  .ticker .strip { animation: none; }
+}
+</style>
+
+<nav>
+  <a class="logo" href="#top">Jan<span>&nbsp;Walker</span></a>
+  <div class="links">
+    <a href="#quiz">The Exam</a>
+    <a href="#garage">Cars &amp; Trucks</a>
+    <a href="#family">Family Table</a>
+    <a href="#about">About</a>
+    <a class="cta" href="#quiz">Prove It</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="over rv">What you probably didn't know</div>
+      <h1 class="rv d1"><span class="row1">Books that</span><br><span class="row2">start</span><br><span class="row3">arguments.</span></h1>
+      <div class="rule rv d1"></div>
+      <p class="lede rv d2">Ninety multiple-choice questions a book, every answer cross-checked against <b>two sources</b> — so when your brother-in-law says the 2JZ debuted in the Supra, you can ruin his evening <b>politely</b>.</p>
+      <div class="ctas rv d3">
+        <a class="btn primary" href="#quiz">Take the entrance exam</a>
+        <a class="btn ghost" href="#garage">Browse the garage</a>
+      </div>
+      <div class="stats rv d3">
+        <div class="stat"><div class="num">19</div><div class="lbl">Books live</div></div>
+        <div class="stat"><div class="num">1,710</div><div class="lbl">Verified questions</div></div>
+        <div class="stat"><div class="num"><em>2</em></div><div class="lbl">Sources per fact</div></div>
+        <div class="stat"><div class="num">0</div><div class="lbl">Filler pages</div></div>
+      </div>
+    </div>
+    <div class="fan rv d2" aria-hidden="true">
+      <img src="{{COVER_supra}}" alt="">
+      <img src="{{COVER_skyline}}" alt="">
+      <img src="{{COVER_miata}}" alt="">
+      <img src="{{COVER_grandpa}}" alt="">
+      <img src="{{COVER_wrx}}" alt="">
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="strip">
+    <span>424 Subaru 22Bs, counting prototypes</span>
+    <span>The 2JZ debuted in a luxury sedan</span>
+    <span>1.2-second pop-up headlights</span>
+    <span>2,568 cc × 1.7 = a rulebook engine</span>
+    <span>Silverado was a trim level for 24 years</span>
+    <span>Pyrex: born 1915, still in grandma's cabinet</span>
+    <span>USDA says 145°F — dad pulls at 128°F</span>
+    <span>An Explorer drove the Jurassic Park tour</span>
+    <span>424 Subaru 22Bs, counting prototypes</span>
+    <span>The 2JZ debuted in a luxury sedan</span>
+    <span>1.2-second pop-up headlights</span>
+    <span>2,568 cc × 1.7 = a rulebook engine</span>
+    <span>Silverado was a trim level for 24 years</span>
+    <span>Pyrex: born 1915, still in grandma's cabinet</span>
+    <span>USDA says 145°F — dad pulls at 128°F</span>
+    <span>An Explorer drove the Jurassic Park tour</span>
+  </div>
+</div>
+
+<section id="quiz">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center">
+      <div class="kicker">Ten questions · straight from the books</div>
+      <h2>The entrance exam.</h2>
+      <div class="rule center"></div>
+      <p class="sub" style="margin-left:auto;margin-right:auto">Every question below is printed in one of the books. Miss one and we'll tell you which book would have saved you.</p>
+    </div>
+    <div class="exam rv d1">
+      <div class="exam-top">
+        <div class="qnum" id="qnum">Q 01 / 10</div>
+        <div class="score">SCORE&nbsp;<b id="score">0</b></div>
+      </div>
+      <div class="exam-body" id="exam-body"></div>
+      <div class="progress"><i id="bar"></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="garage">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Trivia &amp; Fun Facts · Cars &amp; Trucks</div>
+      <h2>The garage. Twelve machines.</h2>
+      <div class="rule"></div>
+      <p class="sub">From the roadster that saved the sports car to the rally sedan a rulebook forced into showrooms. Each book: 90 questions, 10 parts, zero recycled internet lists.</p>
+    </div>
+    <div class="shelf" id="car-shelf"></div>
+  </div>
+</section>
+
+<section id="family">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Family Table Books · six seats</div>
+      <h2>The people at your table.</h2>
+      <div class="rule"></div>
+      <p class="sub">540 verified questions about grandpas, grandmas, dads, moms, daughters and sons. Read them out loud — they will correct you, and that's the whole point.</p>
+    </div>
+    <div class="shelf" id="family-shelf" style="grid-template-columns: repeat(auto-fill, minmax(190px, 1fr))"></div>
+  </div>
+</section>
+
+<section id="seasonal">
+  <div class="wrap">
+    <div class="season rv">
+      <img src="{{COVER_halloween}}" alt="Halloween Trivia book cover">
+      <div>
+        <div class="kicker">Seasonal shelf</div>
+        <h3>90 things you <span>think</span> you know about Halloween.</h3>
+        <p>Candy corn, Samhain, the great razor-blade panic that never actually happened. The October book for the household know-it-all.</p>
+      </div>
+      <a class="btn" href="https://www.amazon.com/dp/B0H87S7S1P" target="_blank" rel="noopener">Get it on Amazon</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">About the author</div>
+      <h2>Jan Walker checks everything twice.</h2>
+      <div class="rule"></div>
+      <p>Jan Walker writes trivia books for people who correct the television. Cars and trucks with real cult followings, plus the family series about the people who taught you everything — whether you asked or not.</p>
+      <p>No AI-scraped listicles bound into a paperback. Every question is cross-referenced against <b>two independent sources</b> — race records, homologation papers, patent filings, USDA tables — before it earns a page. When estimates disagree, the book says so honestly.</p>
+      <p>Available worldwide in <b>paperback and Kindle</b>. Follow along on <a class="x" href="https://x.com/JanWalkerBooks" target="_blank" rel="noopener">X&nbsp;@JanWalkerBooks</a> and <a class="x" href="https://pinterest.com/janwalkerbooks" target="_blank" rel="noopener">Pinterest</a>.</p>
+    </div>
+    <div class="rules rv d1">
+      <div class="rh">House rules · every book</div>
+      <ol>
+        <li>90 questions. 10 themed parts. No padding.</li>
+        <li>Every fact verified against two sources.</li>
+        <li>Answers explained — the story behind the number.</li>
+        <li>Disputed facts flagged as disputed. Honestly.</li>
+        <li>Built to be read out loud and argued over.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo">Jan<span>&nbsp;Walker</span></div>
+        <p style="max-width:34ch;font-size:14px;margin-top:12px">Trivia &amp; fun facts, verified twice.<br>Paperback &amp; Kindle on Amazon.</p>
+      </div>
+      <div class="list">
+        <div class="h">Series</div>
+        <a href="#garage">Trivia &amp; Fun Facts: Cars &amp; Trucks</a>
+        <a href="#family">Family Table Books</a>
+        <a href="https://www.amazon.com/dp/B0H87S7S1P" target="_blank" rel="noopener">Halloween Trivia</a>
+      </div>
+      <div class="list">
+        <div class="h">Elsewhere</div>
+        <a href="https://x.com/JanWalkerBooks" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://pinterest.com/janwalkerbooks" target="_blank" rel="noopener">Pinterest</a>
+        <a href="https://www.amazon.com/stores/Jan-Walker/author/B0F9Y6B9RN" target="_blank" rel="noopener">Amazon author page</a>
+      </div>
+    </div>
+    <div class="fine">© 2026 Jan Walker · All book links lead to Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
+  </div>
+</footer>
+
+<script>
+const AMZ = (asin) => `https://www.amazon.com/dp/${asin}`;
+
+const CARS = [
+  { slug: 'miata',     t: 'Mazda MX-5 Miata',  asin: 'B0H3NK9YGJ', hook: 'The best-selling two-seat roadster ever built. Guinness says so.' },
+  { slug: 'supra',     t: 'Toyota Supra',      asin: 'B0H3T3LZYD', hook: 'The 2JZ legend, told properly — from Aristo sedan to 1,000 hp.' },
+  { slug: 'skyline',   t: 'Skyline GT-R',      asin: 'B0HCZWQSG9', hook: 'They called it Godzilla. It earned it. Five generations deep.' },
+  { slug: 'wrx',       t: 'Subaru WRX',        asin: 'B0HD8FX51M', hook: 'The rally car a rulebook forced Subaru to sell you.', badge: 'New' },
+  { slug: 'mustang',   t: 'Ford Mustang',      asin: 'B0HBXPPWCJ', hook: "America's original pony car — 418,000 sold in year one." },
+  { slug: 'silverado', t: 'Chevy Silverado',   asin: 'B0HCK8655N', hook: 'A trim level for 24 years before it was ever a truck.' },
+  { slug: 'gwagon',    t: 'Mercedes G-Wagon',  asin: 'B0HBT4F5H3', hook: "Born from a Shah's order that died 16 days before production." },
+  { slug: 'tacoma',    t: 'Toyota Tacoma',     asin: 'B0H3LRD3YF', hook: 'One generation, eleven years — still outsold everyone at the end.' },
+  { slug: 'f150',      t: 'Ford F-150',        asin: 'B0H3NYC85Q', hook: 'The truck that made twin turbos respectable in half-ton country.' },
+  { slug: '4runner',   t: 'Toyota 4Runner',    asin: 'B0H41QVRGC', hook: 'Fifteen years on one chassis. A cult formed around the receipt.' },
+  { slug: 'tundra',    t: 'Toyota Tundra',     asin: 'B0H49SCLH2', hook: 'The 5.7 V8 that ran near-unchanged while rivals kept blinking.' },
+  { slug: 'explorer',  t: 'Ford Explorer',     asin: 'B0HC3X71SD', hook: 'The SUV that chauffeured Jurassic Park — and half of the 90s.' },
+];
+
+const FAMILY = [
+  { slug: 'grandpa',  t: 'Grandpa Trivia',  asin: 'B0H7N6B5KR', hook: '90 things he probably knew. Few of them help you today.' },
+  { slug: 'grandma',  t: 'Grandma Trivia',  asin: 'B0H7N21RMX', hook: "90 things she quietly knew. You'd love to know them too." },
+  { slug: 'dad',      t: 'Dad Trivia',      asin: 'B0H7NN36T6', hook: '90 things he absolutely insists on. Some are even true.' },
+  { slug: 'mom',      t: 'Mom Trivia',      asin: 'B0H7SCBZZG', hook: "90 things she's told you twice. Please just listen the first time." },
+  { slug: 'daughter', t: 'Daughter Trivia', asin: 'B0H7SS3HSH', hook: '90 things she does, says and believes. You should know them.' },
+  { slug: 'son',      t: 'Son Trivia',      asin: 'B0H7SWYJCR', hook: '90 things he does, says and believes. Pillow facing the door.' },
+];
+
+const COVERS = { {{COVER_MAP}} };
+
+const QUESTIONS = [
+  { src: 'Toyota Supra Trivia', slug: 'supra', asin: 'B0H3T3LZYD',
+    q: 'The Toyota 2JZ-GTE first appeared in which production car?',
+    o: ['1993 Mk4 Toyota Supra', '1991 Toyota Aristo', '1990 Toyota Soarer', '1995 Toyota Chaser'], c: 1,
+    s: 'The 2JZ-GTE debuted in the 1991 Aristo luxury sedan — two years before the Mk4. The icon’s engine started life hauling executives around Tokyo.' },
+  { src: 'Skyline GT-R Trivia', slug: 'skyline', asin: 'B0HCZWQSG9',
+    q: 'Why is the RB26DETT exactly 2,568 cc and not a round 2.6 litres?',
+    o: ['Japanese tax bracket', 'Group A turbo-factor math', 'Shared crank with the RB25', 'It IS exactly 2,600 cc'], c: 1,
+    s: 'Group A multiplied turbo engines by 1.7. 2,568 × 1.7 lands just under the 4,500 cc class ceiling with the widest tyres allowed. A regulations document designed one of the great road engines.' },
+  { src: 'Subaru WRX Trivia', slug: 'wrx', asin: 'B0HD8FX51M',
+    q: 'How many 22B STIs did Subaru build in 1998, counting prototypes?',
+    o: ['300', '424', '555', '1,000'], c: 1,
+    s: '400 for Japan, 16 for the UK, 5 for Australia, 3 prototypes. The Japanese allocation sold out in as little as 30 minutes.' },
+  { src: 'Mazda MX-5 Miata Trivia', slug: 'miata', asin: 'B0H3NK9YGJ',
+    q: 'How fast did a 1990 NA Miata’s pop-up headlights go from fully closed to fully open?',
+    o: ['0.5 seconds', '1.2 seconds', '2.5 seconds', '3.1 seconds'], c: 1,
+    s: 'Engineered for a 1.2-second full deploy — faster than most competitors of the era. The assembly is now a restoration pilgrimage part.' },
+  { src: 'Chevy Silverado Trivia', slug: 'silverado', asin: 'B0HCK8655N',
+    q: 'The Silverado name was borrowed from what kind of place?',
+    o: ['A Texas ranch', 'A Spanish word for silver', 'A California mining town', 'A Nevada highway'], c: 2,
+    s: 'Silverado, California — a silver-mining town founded 1878. Chevy put the name on its plushest C/K trim in 1975, twenty-four years before it named a truck.' },
+  { src: 'Ford Explorer Trivia', slug: 'explorer', asin: 'B0HC3X71SD',
+    q: 'The Explorer starred as the tour vehicle in which 1990s film?',
+    o: ['Twister', 'Jurassic Park', 'Independence Day', 'Dante’s Peak'], c: 1,
+    s: 'Custom-painted Explorer XLTs ran the automated park tour in 1993 — one of the most memorable movie-vehicle roles of the decade.' },
+  { src: 'Grandpa Trivia', slug: 'grandpa', asin: 'B0H7N6B5KR',
+    q: 'What did Grandpa do with a 9-volt battery before throwing it out?',
+    o: ['Shook it next to his ear', 'Touched it to his tongue', 'Held it against a magnet', 'Set it on the radiator'], c: 1,
+    s: 'The universal 9-volt diagnostic before multimeters got cheap. About 1.3 mA — a sharp tingle, harmless. Tingle = good. No tingle = trash.' },
+  { src: 'Grandma Trivia', slug: 'grandma', asin: 'B0H7N21RMX',
+    q: 'What year did Corning introduce the Pyrex bakeware that filled American kitchens?',
+    o: ['1908', '1915', '1923', '1932'], c: 1,
+    s: 'Borosilicate glass, invented for railroad lanterns. By 1940 every house had a piece. Grandma’s bowls were never going to wear out.' },
+  { src: 'Dad Trivia', slug: 'dad', asin: 'B0H7NN36T6',
+    q: 'USDA temp for medium-rare beef — and where does dad actually pull his steak?',
+    o: ['USDA 145°F / Dad 128°F', 'USDA 130°F / Dad 145°F', 'USDA 145°F / Dad 155°F', 'USDA 160°F / Dad 145°F'], c: 0,
+    s: 'USDA says 145°F with a rest. Dad pulls at 128°F, argues carryover cooking — and he’s mostly right: the meat climbs 5–7°F resting.' },
+  { src: 'Mom Trivia', slug: 'mom', asin: 'B0H7SCBZZG',
+    q: 'Which family birthday does mom remember before the person whose birthday it is?',
+    o: ['Her own', 'Yours', 'Her sister-in-law’s', 'The dog’s'], c: 2,
+    s: 'Mom has it flagged by August 12th. The sister-in-law forgets until September. Mom is the family group chat’s memory backup layer.' },
+];
+
+function card(b) {
+  const a = document.createElement('a');
+  a.className = 'book rv';
+  a.href = AMZ(b.asin);
+  a.target = '_blank'; a.rel = 'noopener';
+  a.innerHTML = `${b.badge ? `<span class="badge">${b.badge}</span>` : ''}
+    <img src="${COVERS[b.slug]}" alt="${b.t} book cover" loading="lazy">
+    <div class="t">${b.t}</div>
+    <div class="hook">${b.hook}</div>
+    <div class="go">Paperback &amp; Kindle &rarr;</div>`;
+  return a;
+}
+CARS.forEach(b => document.getElementById('car-shelf').appendChild(card(b)));
+FAMILY.forEach(b => document.getElementById('family-shelf').appendChild(card(b)));
+
+let qi = 0, score = 0, answered = false;
+const LET = ['A', 'B', 'C', 'D'];
+const body = document.getElementById('exam-body');
+
+function renderQ() {
+  answered = false;
+  const q = QUESTIONS[qi];
+  document.getElementById('qnum').textContent = `Q ${String(qi + 1).padStart(2, '0')} / ${QUESTIONS.length}`;
+  document.getElementById('bar').style.width = `${(qi / QUESTIONS.length) * 100}%`;
+  body.innerHTML = `
+    <div class="src">From: ${q.src}</div>
+    <div class="q">${q.q}</div>
+    <div class="opts">${q.o.map((o, i) => `<button class="opt" data-i="${i}"><span class="tag">${LET[i]}</span><span>${o}</span></button>`).join('')}</div>
+    <div class="stamp" id="stamp"></div>
+    <div class="reveal-box" id="reveal">
+      <img src="${COVERS[q.slug]}" alt="">
+      <div class="story">${q.s}<br><b>Want the other 89?</b> <a href="${AMZ(q.asin)}" target="_blank" rel="noopener">${q.src} on Amazon &rarr;</a></div>
+    </div>
+    <div class="next-row" id="next-row"><button class="btn primary small" id="next">${qi === QUESTIONS.length - 1 ? 'See my verdict' : 'Next question'} &rarr;</button></div>`;
+  body.querySelectorAll('.opt').forEach(btn => btn.addEventListener('click', () => answer(+btn.dataset.i)));
+}
+
+function answer(i) {
+  if (answered) return;
+  answered = true;
+  const q = QUESTIONS[qi];
+  const ok = i === q.c;
+  if (ok) { score++; document.getElementById('score').textContent = score; }
+  body.querySelectorAll('.opt').forEach((btn, bi) => {
+    btn.disabled = true;
+    if (bi === q.c) btn.classList.add('correct');
+    else if (bi === i) btn.classList.add('wrong');
+  });
+  const stamp = document.getElementById('stamp');
+  stamp.textContent = ok ? 'Correct' : 'Wrong';
+  stamp.className = `stamp show ${ok ? 'ok' : 'bad'}`;
+  document.getElementById('reveal').classList.add('show');
+  document.getElementById('next-row').classList.add('show');
+  document.getElementById('next').addEventListener('click', () => {
+    qi++;
+    if (qi < QUESTIONS.length) renderQ(); else finale();
+  });
+}
+
+function finale() {
+  document.getElementById('bar').style.width = '100%';
+  document.getElementById('qnum').textContent = 'Final';
+  let v, p;
+  if (score >= 9)      { v = 'Suspiciously good.';   p = 'Either you wrote these books or you should be fact-checking them. The full set goes 90 questions deep per book — find your next argument below.'; }
+  else if (score >= 7) { v = 'Garage-certified.';    p = 'You know your stuff — and now you know exactly where the gaps are. Each book carries 90 of these, with the stories behind every answer.'; }
+  else if (score >= 4) { v = 'Dangerous at dinner.'; p = 'Enough to start the argument, not enough to finish it. The books exist for exactly this. Ninety questions each, every fact verified twice.'; }
+  else                 { v = 'The books won.';       p = 'Respectfully: the television has been correcting YOU. Good news — every one of these questions lives in a book with 89 friends and full explanations.'; }
+  body.innerHTML = `
+    <div class="final">
+      <div class="big">${score}<span>/${QUESTIONS.length}</span></div>
+      <div class="verdict">${v}</div>
+      <p>${p}</p>
+      <div class="ctas">
+        <a class="btn primary small" href="#garage">Browse the garage</a>
+        <a class="btn ghost small" href="#family">Meet the family</a>
+        <button class="btn ghost small" id="again">Retake</button>
+      </div>
+    </div>`;
+  document.getElementById('again').addEventListener('click', () => {
+    qi = 0; score = 0;
+    document.getElementById('score').textContent = 0;
+    renderQ();
+  });
+}
+renderQ();
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
