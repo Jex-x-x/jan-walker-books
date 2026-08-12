@@ -328,6 +328,12 @@ footer a:hover { color: #ff7a33; }
 footer .list { display: flex; flex-direction: column; gap: 9px; font-size: 14px; }
 footer .h { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #7b7668; margin-bottom: 10px; }
 footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4c; font-size: 12.5px; color: #7b7668; }
+footer .reader { margin-top: 34px; padding-top: 24px; border-top: 1px solid #363b4c; }
+footer .reader .h { margin-bottom: 9px; }
+footer .reader .row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 30px; }
+footer .reader p { font-size: 14px; color: #b6b0a0; margin: 0; max-width: 60ch; line-height: 1.55; }
+footer .reader a.tk { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); white-space: nowrap; border-bottom: 1px solid rgba(234,88,12,.45); padding-bottom: 3px; }
+footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
 
 /* ---------- REVEAL ---------- */
 .rv { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
@@ -500,7 +506,14 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
         <a href="https://www.amazon.com/Jan-Walker/e/B0H3W7P7KR" target="_blank" rel="noopener">Amazon author page</a>
       </div>
     </div>
-    <div class="fine">© 2026 Jan Walker · All book links lead to Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
+    <div class="reader">
+      <div class="h">For readers</div>
+      <div class="row">
+        <p>Keep every book you finish in one clean Google&nbsp;Sheets tracker — type the ISBN and the row fills itself: cover, title, author and page count.</p>
+        <a class="tk" href="https://www.etsy.com/listing/4549586659" target="_blank" rel="noopener">Reading tracker on Etsy&nbsp;&rarr;</a>
+      </div>
+    </div>
+    <div class="fine">© 2026 Jan Walker · Book links lead to Amazon; the reading tracker is a separate download on Etsy. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
   </div>
 </footer>
 
