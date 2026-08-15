@@ -81,6 +81,12 @@ nav .links a.cta:hover { background: var(--accent); color: #fff; }
 .bhero .spec .lbl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-top: 4px; }
 .bhero .buy { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .bhero .note { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 12px; }
+#aplus { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+#aplus .aplus-banners { max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 22px; }
+#aplus .aplus-banners img { width: 100%; display: block; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 22px 44px -28px rgba(29,33,48,.42); }
+#aplus .aplus-squares { max-width: 900px; margin: 22px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+#aplus .aplus-squares img { width: 100%; display: block; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 16px 30px -22px rgba(29,33,48,.4); }
+@media (max-width: 640px) { #aplus .aplus-squares { grid-template-columns: 1fr; max-width: 420px; } }
 #trailer { padding: 56px 0; background: var(--paper-deep); }
 #trailer video { display: block; width: min(560px, 92vw); margin: 0 auto; border-radius: 10px; box-shadow: 0 30px 60px -30px rgba(29,33,48,.45); background: #10131e; }
 #trailer .sec-head { margin-bottom: 30px; }
@@ -210,9 +216,67 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
 
 
 
+<section id="aplus">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <div class="kicker">A closer look</div>
+      <h2>The whole book, before you buy.</h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    </div>
+    <div class="aplus-banners">
+      <img src="/aplus/christmas/1.jpg" alt="Christmas Trivia — cover and overview" loading="lazy">
+      <img src="/aplus/christmas/2.jpg" alt="Christmas Trivia — the ten themed parts" loading="lazy">
+      <img src="/aplus/christmas/3.jpg" alt="Christmas Trivia — a sample question" loading="lazy">
+    </div>
+    <div class="aplus-squares">
+      <img src="/aplus/christmas/4.jpg" alt="Christmas Trivia — part of the series" loading="lazy">
+      <img src="/aplus/christmas/5.jpg" alt="Christmas Trivia — a great gift" loading="lazy">
+      <img src="/aplus/christmas/6.jpg" alt="Christmas Trivia — about the author" loading="lazy">
+    </div>
+  </div>
+</section>
 
+<section id="inside">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">What's inside</div>
+      <h2>Ten parts. Ninety questions.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="parts"><div class="part"><span class="num">01</span><span><span class="pt">Where It Came From.</span> <span class="ps">The tree, the stocking, the borrowed parts</span></span></div>
+<div class="part"><span class="num">02</span><span><span class="pt">Carols &amp; Music.</span> <span class="ps">Who really wrote the songs everyone sings</span></span></div>
+<div class="part"><span class="num">03</span><span><span class="pt">At the Movies.</span> <span class="ps">The films watched every single December</span></span></div>
+<div class="part"><span class="num">04</span><span><span class="pt">Santa Claus.</span> <span class="ps">The 4th-century bishop who became a brand</span></span></div>
+<div class="part"><span class="num">05</span><span><span class="pt">The Christmas Table.</span> <span class="ps">What gets eaten, and exactly why</span></span></div>
+<div class="part"><span class="num">06</span><span><span class="pt">Around the World.</span> <span class="ps">One holiday, ninety different countries</span></span></div>
+<div class="part"><span class="num">07</span><span><span class="pt">Traditions &amp; Symbols.</span> <span class="ps">Holly, mistletoe, the colours, the candles</span></span></div>
+<div class="part"><span class="num">08</span><span><span class="pt">On Television.</span> <span class="ps">The specials that arrive whether asked or not</span></span></div>
+<div class="part"><span class="num">09</span><span><span class="pt">Gifts &amp; Business.</span> <span class="ps">Wrapping, shops and the economics of giving</span></span></div>
+<div class="part"><span class="num">10</span><span><span class="pt">Records &amp; Oddities.</span> <span class="ps">The largest, the strangest, the loose ends</span></span></div></div>
+  </div>
+</section>
 
-
+<section id="try">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <div class="kicker">Straight from page the book</div>
+      <h2>Try one on the house.</h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    </div>
+    <div class="tryq">
+      <div class="qtop">PART ONE  ·  SAINT NICHOLAS</div>
+      <div class="qbody">
+        <div class="q">Saint Nicholas — the historical figure behind Santa Claus — was a bishop in which region?</div>
+        <div class="opts" id="opts"><button class="opt"><span class="tag">A</span><span>Anatolia (modern Turkey)</span></button>
+<button class="opt"><span class="tag">B</span><span>Sicily</span></button>
+<button class="opt"><span class="tag">C</span><span>Cappadocian Greece</span></button>
+<button class="opt"><span class="tag">D</span><span>Lapland</span></button></div>
+        <div class="stamp" id="stamp"></div>
+        <div class="reveal" id="reveal">He was Bishop of Myra, on the southern coast of what is now Turkey, in the fourth century. Nothing about him involved snow, reindeer or a workshop — all of that came much later.<br><b>There are 89 more where that came from.</b> <a href="https://www.amazon.com/dp/B0HFCTMH6V" target="_blank" rel="noopener">Get Christmas Trivia on Amazon &rarr;</a> or <a href="/#quiz">take the full entrance exam &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="promise">
   <div class="wrap">
