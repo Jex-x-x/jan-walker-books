@@ -21,3 +21,4 @@ https://janwalkerbooks.com/books/halloween/
 https://janwalkerbooks.com/books/christmas/
 https://janwalkerbooks.com/books/wordsearch/
 https://janwalkerbooks.com/books/halloween_ws/
+https://janwalkerbooks.com/books/christmas_ws/
