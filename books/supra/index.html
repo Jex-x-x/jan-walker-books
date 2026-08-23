@@ -62,16 +62,6 @@ nav .links a:hover { color: var(--accent); }
 nav .links a.cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 100px; letter-spacing: .16em; }
 nav .links a.cta:hover { background: var(--accent); color: #fff; }
 @media (max-width: 760px) { nav .links a:not(.cta) { display: none; } }
-nav .links a.lang { border: 1px solid var(--line); padding: 6px 12px; border-radius: 100px; }
-nav .links a.lang:hover { border-color: var(--accent); color: var(--accent); }
-nav .links a.lang .labbr { display: none; }
-@media (max-width: 760px) { nav .links a.lang { display: inline-block; padding: 3px 7px; font-size: 11px; }
-  nav .links a.lang .lfull { display: none; } nav .links a.lang .labbr { display: inline; }
-  nav .links a.cta { white-space: nowrap; padding: 8px 13px; font-size: 11px; }
-  nav .logo { font-size: 18px; } nav .logo-mark { height: 27px; margin-right: 6px; }
-  nav .links { gap: 8px; } }
-/* очень узкие экраны (SE, Fold): переключатель языков вытесняет вордмарк — оставляем лиса */
-@media (max-width: 359px) { nav .logo { max-width: 30px; overflow: hidden; } }
 .btn {
   display: inline-block; text-decoration: none; font-family: 'Anton'; text-transform: uppercase;
   font-size: 16px; letter-spacing: .09em; padding: 15px 30px; border-radius: 100px;
@@ -98,6 +88,13 @@ nav .links a.lang .labbr { display: none; }
 .bhero .specs { display: flex; gap: 30px; margin: 26px 0 6px; flex-wrap: wrap; }
 .bhero .spec .num { font-family: 'Anton'; font-size: 28px; color: var(--ink); }
 .bhero .spec .lbl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-top: 4px; }
+/* выбор языка — вариация товара, как на маркетплейсе: рядом с кнопками покупки */
+.bhero .vary { margin-top: 24px; }
+.bhero .vary .vlbl { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 10px; }
+.bhero .vary .vopts { display: flex; gap: 10px; flex-wrap: wrap; }
+.bhero .vary .vopt { display: inline-block; border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: 15px; line-height: 1.2; color: var(--ink); text-decoration: none; background: #fff; transition: border-color .15s ease, color .15s ease; }
+.bhero .vary a.vopt:hover { border-color: var(--accent); color: var(--accent); }
+.bhero .vary .vopt.on { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); cursor: default; }
 .bhero .buy { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .bhero .note { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 12px; }
 #aplus { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -202,7 +199,6 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
 <nav>
   <a class="logo" href="/"><img class="logo-mark" src="/brand/logo.png" alt="">Jan<span>&nbsp;Walker</span></a>
   <div class="links">
-    <a class="lang" href="/de/books/supra_de/" hreflang="de" lang="de"><span class="lfull">Deutsch</span><span class="labbr">DE</span></a>
     <a href="/#quiz">The Exam</a>
     <a href="/#garage">Cars &amp; Trucks</a>
     <a href="/#family">Family Table</a>
@@ -224,6 +220,13 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
         <div class="spec"><div class="num">90</div><div class="lbl">Questions</div></div>
         <div class="spec"><div class="num">10</div><div class="lbl">Themed parts</div></div>
         <div class="spec"><div class="num">2</div><div class="lbl">Sources per fact</div></div>
+      </div>
+      <div class="vary">
+        <div class="vlbl">Language</div>
+        <div class="vopts">
+          <span class="vopt on" aria-current="true">English</span>
+          <a class="vopt" href="/de/books/supra_de/" hreflang="de" lang="de">Deutsch</a>
+        </div>
       </div>
       <div class="buy">
         <a class="btn primary" href="https://www.amazon.com/dp/B0H3T3LZYD" target="_blank" rel="noopener">Paperback on Amazon</a>
