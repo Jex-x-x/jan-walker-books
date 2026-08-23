@@ -24,4 +24,7 @@
   <url><loc>https://janwalkerbooks.com/books/wordsearch/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://janwalkerbooks.com/books/halloween_ws/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://janwalkerbooks.com/books/christmas_ws/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://janwalkerbooks.com/de/books/miata_de/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://janwalkerbooks.com/de/books/supra_de/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://janwalkerbooks.com/es/books/miata_es/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

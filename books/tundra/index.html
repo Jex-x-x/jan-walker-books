@@ -1,3 +1,4 @@
+<html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Toyota Tundra Trivia &amp; Fun Facts — Jan Walker</title>
@@ -58,6 +59,16 @@ nav .links a:hover { color: var(--accent); }
 nav .links a.cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 100px; letter-spacing: .16em; }
 nav .links a.cta:hover { background: var(--accent); color: #fff; }
 @media (max-width: 760px) { nav .links a:not(.cta) { display: none; } }
+nav .links a.lang { border: 1px solid var(--line); padding: 6px 12px; border-radius: 100px; }
+nav .links a.lang:hover { border-color: var(--accent); color: var(--accent); }
+nav .links a.lang .labbr { display: none; }
+@media (max-width: 760px) { nav .links a.lang { display: inline-block; padding: 3px 7px; font-size: 11px; }
+  nav .links a.lang .lfull { display: none; } nav .links a.lang .labbr { display: inline; }
+  nav .links a.cta { white-space: nowrap; padding: 8px 13px; font-size: 11px; }
+  nav .logo { font-size: 18px; } nav .logo-mark { height: 27px; margin-right: 6px; }
+  nav .links { gap: 8px; } }
+/* очень узкие экраны (SE, Fold): переключатель языков вытесняет вордмарк — оставляем лиса */
+@media (max-width: 359px) { nav .logo { max-width: 30px; overflow: hidden; } }
 .btn {
   display: inline-block; text-decoration: none; font-family: 'Anton'; text-transform: uppercase;
   font-size: 16px; letter-spacing: .09em; padding: 15px 30px; border-radius: 100px;
@@ -390,3 +401,4 @@ document.querySelectorAll('#opts .opt').forEach((btn, i) => btn.addEventListener
   document.getElementById('reveal').classList.add('show');
 }));
 </script>
+</html>
