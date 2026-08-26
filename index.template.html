@@ -1,8 +1,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jan Walker — Books That Start Arguments</title>
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <meta name="description" content="Trivia & Fun Facts books by Jan Walker. 90 verified questions each, across cars, trucks and the people at your table. Paperback & Kindle on Amazon.">
 <link rel="canonical" href="https://janwalkerbooks.com/">
+<meta name="google-site-verification" content="5SBKRrPNSbdVGFR1IxYGG8zrXglwaJDM_T4cDVON1cI">
+<meta name="msvalidate.01" content="88F0E9A10B7D3AEBF4A91E52CF453923">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jan Walker Books">
 <meta property="og:title" content="Books That Start Arguments — take the Entrance Exam">
@@ -16,6 +22,7 @@
 <meta name="twitter:title" content="Books That Start Arguments — take the Entrance Exam">
 <meta name="twitter:description" content="Ten trivia questions straight from the books. Every fact verified twice.">
 <meta name="twitter:image" content="https://janwalkerbooks.com/og.jpg">
+<script type="application/ld+json">{{JSONLD}}</script>
 <style>
 @font-face { font-family: 'Anton'; src: url(data:font/ttf;base64,{{FONT_ANTON}}) format('truetype'); font-display: swap; }
 @font-face { font-family: 'Lora'; src: url(data:font/ttf;base64,{{FONT_LORA}}) format('truetype'); font-weight: 400; font-display: swap; }
@@ -74,7 +81,8 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 15px 28px;
 }
-nav .logo { font-family: 'Anton'; font-size: 20px; letter-spacing: .04em; text-decoration: none; color: var(--ink); text-transform: uppercase; }
+nav .logo { display: inline-flex; align-items: center; font-family: 'Anton'; font-size: 20px; letter-spacing: .04em; text-decoration: none; color: var(--ink); text-transform: uppercase; }
+nav .logo-mark { height: 30px; width: auto; display: block; margin-right: 8px; }
 nav .logo span { color: var(--accent); }
 nav .links { display: flex; gap: 26px; align-items: center; }
 nav .links a { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .15s; }
@@ -303,6 +311,16 @@ section { padding: 92px 0; }
 .season .btn:hover { background: var(--accent); border-color: var(--accent); box-shadow: none; }
 @media (max-width: 860px) { .season { grid-template-columns: 1fr; text-align: center; } .season img { max-width: 170px; margin: 0 auto; } }
 
+/* ---------- FOR READERS ---------- */
+.reader-spot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 46px; align-items: center; background: var(--paper-deep); border: 1px solid #e4dbc6; border-radius: 14px; box-shadow: 0 30px 56px -34px rgba(29, 33, 48, .35); padding: 34px 44px; }
+.reader-spot .shot { border-radius: 10px; overflow: hidden; border: 1px solid #e4dbc6; background: #fff; box-shadow: 0 16px 30px -18px rgba(29, 33, 48, .4); }
+.reader-spot .shot img { width: 100%; display: block; }
+.reader-spot h3 { font-size: 30px; line-height: 1.05; }
+.reader-spot .rule { margin: 16px 0 0; }
+.reader-spot p { color: var(--ink-soft); margin: 18px 0 22px; max-width: 48ch; }
+.reader-spot .meta { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-top: 16px; }
+@media (max-width: 820px) { .reader-spot { grid-template-columns: 1fr; text-align: center; gap: 24px; padding: 26px 24px; } .reader-spot p, .reader-spot .rule { margin-left: auto; margin-right: auto; } }
+
 /* ---------- ABOUT ---------- */
 #about .wrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 64px; align-items: start; }
 #about h2 { font-size: clamp(34px, 4.4vw, 54px); margin-top: 12px; }
@@ -328,6 +346,12 @@ footer a:hover { color: #ff7a33; }
 footer .list { display: flex; flex-direction: column; gap: 9px; font-size: 14px; }
 footer .h { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #7b7668; margin-bottom: 10px; }
 footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4c; font-size: 12.5px; color: #7b7668; }
+footer .reader { margin-top: 34px; padding-top: 24px; border-top: 1px solid #363b4c; }
+footer .reader .h { margin-bottom: 9px; }
+footer .reader .row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 30px; }
+footer .reader p { font-size: 14px; color: #b6b0a0; margin: 0; max-width: 60ch; line-height: 1.55; }
+footer .reader a.tk { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); white-space: nowrap; border-bottom: 1px solid rgba(234,88,12,.45); padding-bottom: 3px; }
+footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
 
 /* ---------- REVEAL ---------- */
 .rv { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
@@ -340,7 +364,7 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
 </style>
 
 <nav>
-  <a class="logo" href="#top">Jan<span>&nbsp;Walker</span></a>
+  <a class="logo" href="#top"><img class="logo-mark" src="/brand/logo.png" alt="">Jan<span>&nbsp;Walker</span></a>
   <div class="links">
     <a href="#quiz">The Exam</a>
     <a href="#garage">Cars &amp; Trucks</a>
@@ -362,8 +386,8 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
         <a class="btn ghost" href="#garage">Browse the garage</a>
       </div>
       <div class="stats rv d3">
-        <div class="stat"><div class="num">19</div><div class="lbl">Books live</div></div>
-        <div class="stat"><div class="num">1,710</div><div class="lbl">Verified questions</div></div>
+        <div class="stat"><div class="num">{{BOOK_COUNT}}</div><div class="lbl">Books live</div></div>
+        <div class="stat"><div class="num">{{QUESTION_COUNT}}</div><div class="lbl">Verified questions</div></div>
         <div class="stat"><div class="num"><em>2</em></div><div class="lbl">Sources per fact</div></div>
         <div class="stat"><div class="num">0</div><div class="lbl">Filler pages</div></div>
       </div>
@@ -445,15 +469,25 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
 
 <section id="seasonal">
   <div class="wrap">
-    <div class="season rv">
-      <img src="{{COVER_halloween}}" alt="Halloween Trivia book cover">
-      <div>
-        <div class="kicker">Seasonal shelf</div>
-        <h3>90 things you <span>think</span> you know about Halloween.</h3>
-        <p>Candy corn, Samhain, the great razor-blade panic that never actually happened. The October book for the household know-it-all.</p>
-      </div>
-      <a class="btn" href="https://www.amazon.com/dp/B0H87S7S1P" target="_blank" rel="noopener">Get it on Amazon</a>
+    <div class="sec-head rv">
+      <div class="kicker">Seasonal Shelf</div>
+      <h2>Books for the calendar.</h2>
+      <div class="rule"></div>
+      <p class="sub">Holiday trivia for the household know-it-all — every fact checked twice. Halloween for October, Christmas for December.</p>
     </div>
+    <div class="shelf" id="seasonal-shelf" style="grid-template-columns: repeat(auto-fill, minmax(190px, 1fr))"></div>
+  </div>
+</section>
+
+<section id="puzzles">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">New series · Memory Lane Puzzles</div>
+      <h2>Not everything is a quiz.</h2>
+      <div class="rule"></div>
+      <p class="sub">Large-print word search for adults and seniors — a checked fact printed under every puzzle, ten themed chapters across five decades. Same verified standard, a gentler shape.</p>
+    </div>
+    <div class="shelf" id="puzzle-shelf" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"></div>
   </div>
 </section>
 
@@ -480,6 +514,22 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
   </div>
 </section>
 
+<section id="reader">
+  <div class="wrap">
+    <div class="reader-spot rv">
+      <div class="shot"><img src="/reading-tracker.jpg" alt="Book Tracker 2026 — a Google Sheets reading tracker shown on a laptop"></div>
+      <div>
+        <div class="kicker">For readers</div>
+        <h3>Keep a shelf of everything you&rsquo;ve read.</h3>
+        <div class="rule"></div>
+        <p>The reading tracker I built for myself &mdash; one clean Google&nbsp;Sheets file. Type the ISBN and the row fills itself: cover, title, author and page count. Ten tabs &mdash; Library, TBR, wishlist and a reading challenge that counts as you go.</p>
+        <a class="btn primary" href="https://www.etsy.com/listing/4549586659" target="_blank" rel="noopener">Get the reading tracker on Etsy &rarr;</a>
+        <div class="meta">Digital download &middot; TheGoodKeeper on Etsy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="cols">
@@ -500,7 +550,14 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
         <a href="https://www.amazon.com/Jan-Walker/e/B0H3W7P7KR" target="_blank" rel="noopener">Amazon author page</a>
       </div>
     </div>
-    <div class="fine">© 2026 Jan Walker · All book links lead to Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
+    <div class="reader">
+      <div class="h">For readers</div>
+      <div class="row">
+        <p>Keep every book you finish in one clean Google&nbsp;Sheets tracker — type the ISBN and the row fills itself: cover, title, author and page count.</p>
+        <a class="tk" href="https://www.etsy.com/listing/4549586659" target="_blank" rel="noopener">Reading tracker on Etsy&nbsp;&rarr;</a>
+      </div>
+    </div>
+    <div class="fine">© 2026 Jan Walker · Book links lead to Amazon; the reading tracker is a separate download on Etsy. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.</div>
   </div>
 </footer>
 
@@ -508,7 +565,7 @@ footer .fine { margin-top: 38px; padding-top: 20px; border-top: 1px solid #363b4
 const AMZ = (asin) => `https://www.amazon.com/dp/${asin}`;
 
 const CARS = [
-  { slug: 'miata',     t: 'Mazda MX-5 Miata',  asin: 'B0H3NK9YGJ', hook: 'The best-selling two-seat roadster ever built. Guinness says so.' },
+  { slug: 'miata',     t: 'Mazda MX-5 Miata',  asin: 'B0HGM6J8CF', hook: 'The best-selling two-seat roadster ever built. Guinness says so.' },
   { slug: 'supra',     t: 'Toyota Supra',      asin: 'B0H3T3LZYD', hook: 'The 2JZ legend, told properly — from Aristo sedan to 1,000 hp.' },
   { slug: 'skyline',   t: 'Skyline GT-R',      asin: 'B0HCZWQSG9', hook: 'They called it Godzilla. It earned it. Five generations deep.' },
   { slug: 'wrx',       t: 'Subaru WRX',        asin: 'B0HD8FX51M', hook: 'The rally car a rulebook forced Subaru to sell you.', badge: 'New' },
@@ -546,7 +603,7 @@ const QUESTIONS = [
     q: 'How many 22B STIs did Subaru build in 1998, counting prototypes?',
     o: ['300', '424', '555', '1,000'], c: 1,
     s: '400 for Japan, 16 for the UK, 5 for Australia, 3 prototypes. The Japanese allocation sold out in as little as 30 minutes.' },
-  { src: 'Mazda MX-5 Miata Trivia', slug: 'miata', asin: 'B0H3NK9YGJ',
+  { src: 'Mazda MX-5 Miata Trivia', slug: 'miata', asin: 'B0HGM6J8CF',
     q: 'How fast did a 1990 NA Miata’s pop-up headlights go from fully closed to fully open?',
     o: ['0.5 seconds', '1.2 seconds', '2.5 seconds', '3.1 seconds'], c: 1,
     s: 'Engineered for a 1.2-second full deploy — faster than most competitors of the era. The assembly is now a restoration pilgrimage part.' },
@@ -613,6 +670,24 @@ function card(b) {
 }
 CARS.forEach(b => document.getElementById('car-shelf').appendChild(card(b)));
 FAMILY.forEach(b => document.getElementById('family-shelf').appendChild(card(b)));
+
+const PUZZLES = [
+  { slug: 'wordsearch', t: 'Nostalgic Word Search', badge: 'New series',
+    hook: 'Large-print word search — a checked fact under every grid. Ten chapters across five decades, the 1950s to the 90s.' },
+  { slug: 'halloween_ws', t: 'Halloween Word Search', badge: 'New',
+    hook: 'Large-print Halloween word search — a checked fact under every grid. Samhain to the broadcast that scared New Jersey.' },
+  { slug: 'christmas_ws', t: 'Christmas Word Search', badge: 'New',
+    hook: 'Large-print Christmas word search — a checked fact under every grid. The German tree to a carol written for Thanksgiving.' },
+];
+PUZZLES.forEach(b => document.getElementById('puzzle-shelf').appendChild(card(b)));
+
+const SEASONAL = [
+  { slug: 'christmas', t: 'Christmas Trivia', badge: 'New',
+    hook: '900 fact-checked questions on the traditions everyone repeats — the German tree, the bishop who became Santa, why “Jingle Bells” was written for Thanksgiving.' },
+  { slug: 'halloween', t: 'Halloween Trivia',
+    hook: 'Candy corn, Samhain, and the great razor-blade panic that never actually happened.' },
+];
+SEASONAL.forEach(b => document.getElementById('seasonal-shelf').appendChild(card(b)));
 
 const CAR_SLUGS = new Set(CARS.map(b => b.slug));
 const FAM_SLUGS = new Set(FAMILY.map(b => b.slug));
@@ -791,3 +866,4 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: .12 });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 </script>
+{{ANALYTICS}}
