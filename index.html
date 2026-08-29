@@ -564,7 +564,10 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
 <script>
 const AMZ = (asin) => `https://www.amazon.com/dp/${asin}`;
 
+// ПОРЯДОК ПОЛКИ: новые книги — В НАЧАЛО массива (новинка должна стоять первой,
+// не уезжать в самый низ). Miata остаётся сразу за новинкой как флагман-бестселлер.
 const CARS = [
+  { slug: 'delorean',  t: 'DeLorean DMC-12',   asin: 'B0HGZDXWDM', hook: 'Twenty-two months of production, and a company that failed before the arrest.', badge: 'New' },
   { slug: 'miata',     t: 'Mazda MX-5 Miata',  asin: 'B0HGM6J8CF', hook: 'The best-selling two-seat roadster ever built. Guinness says so.' },
   { slug: 'supra',     t: 'Toyota Supra',      asin: 'B0H3T3LZYD', hook: 'The 2JZ legend, told properly — from Aristo sedan to 1,000 hp.' },
   { slug: 'skyline',   t: 'Skyline GT-R',      asin: 'B0HCZWQSG9', hook: 'They called it Godzilla. It earned it. Five generations deep.' },
@@ -577,7 +580,6 @@ const CARS = [
   { slug: '4runner',   t: 'Toyota 4Runner',    asin: 'B0H41QVRGC', hook: 'Fifteen years on one chassis. A cult formed around the receipt.' },
   { slug: 'tundra',    t: 'Toyota Tundra',     asin: 'B0H49SCLH2', hook: 'The 5.7 V8 that ran near-unchanged while rivals kept blinking.' },
   { slug: 'explorer',  t: 'Ford Explorer',     asin: 'B0HC3X71SD', hook: 'The SUV that chauffeured Jurassic Park — and half of the 90s.' },
-  { slug: 'delorean',  t: 'DeLorean DMC-12',   asin: 'B0HGZDXWDM', hook: 'Twenty-two months of production, and a company that failed before the arrest.', badge: 'New' },
 ];
 
 const FAMILY = [
