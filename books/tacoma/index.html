@@ -102,6 +102,8 @@ nav .links a.cta:hover { background: var(--accent); color: #fff; }
 @media (max-width: 640px) { #aplus .aplus-squares { grid-template-columns: 1fr; max-width: 420px; } }
 #trailer { padding: 56px 0; background: var(--paper-deep); }
 #trailer video { display: block; width: min(560px, 92vw); margin: 0 auto; border-radius: 10px; box-shadow: 0 30px 60px -30px rgba(29,33,48,.45); background: #10131e; }
+    /* Вертикальный ролик (9:16) при ширине 560 вытянулся бы почти на 1000 px — ограничиваем по высоте. */
+    #trailer video.vertical { width: auto; height: min(720px, 78vh); max-width: 92vw; }
 #trailer .sec-head { margin-bottom: 30px; }
 @media (max-width: 860px) {
   .bhero .wrap { grid-template-columns: 1fr; }
@@ -234,7 +236,7 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
       <h2>The 20-second tour.</h2>
       <div class="rule"></div>
     </div>
-    <video controls playsinline preload="metadata" poster="/video/tacoma-promo-3455950-poster.jpg">
+    <video class="wide" controls playsinline preload="metadata" poster="/video/tacoma-promo-3455950-poster.jpg">
       <source src="/video/tacoma-promo-3455950.mp4" type="video/mp4">
     </video>
   </div>
