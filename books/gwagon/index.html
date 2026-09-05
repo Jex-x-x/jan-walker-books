@@ -336,6 +336,66 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
   </div>
 </section>
 
+<section id="review">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <div class="kicker">Already read it?</div>
+      <h2>Tell the next reader.</h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    </div>
+    <p class="rv-lead">One honest sentence about the part you enjoyed helps this book more than any amount of advertising. Found an error? That matters even more — corrections reach the next edition.</p>
+    <div class="rv-btns">
+      <div id="rv-main"></div>
+      <button type="button" class="rv-more" id="rv-more">Bought it in another store?</button>
+      <div class="rv-all" id="rv-all" hidden></div>
+    </div>
+  </div>
+</section>
+<style>
+  #review .rv-lead { max-width: 52ch; margin: 0 auto 26px; text-align: center; }
+  #review .rv-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  #review .rv-more { background: none; border: 0; padding: 6px 2px; cursor: pointer;
+                     font: inherit; font-size: 14px; text-decoration: underline;
+                     text-underline-offset: 3px; opacity: .7; }
+  #review .rv-all { display: flex; flex-wrap: wrap; justify-content: center;
+                    gap: 8px 16px; max-width: 640px; margin: 6px auto 0; }
+  #review .rv-all a { font-size: 14px; color: inherit; text-decoration: none;
+                      border-bottom: 1px solid currentColor; opacity: .62;
+                      padding-bottom: 1px; white-space: nowrap; }
+  #review .rv-all a:hover { opacity: 1; }
+</style>
+<script>
+(function () {
+  var ASIN = "B0HBT4F5H3", HOME = "com", LBL = "Leave a review on";
+  var STORES = [["com","United States"],["co.uk","United Kingdom"],["de","Deutschland"],["fr","France"],["es","España"],["it","Italia"],["nl","Nederland"],["pl","Polska"],["se","Sverige"],["com.au","Australia"],["ca","Canada"],["co.jp","日本"],["com.br","Brasil"],["com.mx","México"],["in","India"]];
+  // Витрину определяем по языку браузера: 'de-AT' -> AT -> amazon.de. Если региона
+  // нет ('de') — берём язык. Не угадали — читатель раскроет полный список.
+  var REG = {US:'com',GB:'co.uk',DE:'de',AT:'de',CH:'de',FR:'fr',BE:'fr',ES:'es',IT:'it',
+             NL:'nl',PL:'pl',SE:'se',AU:'com.au',NZ:'com.au',CA:'ca',JP:'co.jp',
+             BR:'com.br',MX:'com.mx',IN:'in'};
+  var LNG = {de:'de',fr:'fr',es:'es',it:'it',nl:'nl',pl:'pl',sv:'se',ja:'co.jp',pt:'com.br'};
+  function pick() {
+    try {
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      var p = l.split('-');
+      if (p[1] && REG[p[1].toUpperCase()]) return REG[p[1].toUpperCase()];
+      if (LNG[p[0]]) return LNG[p[0]];
+    } catch (e) {}
+    return HOME;
+  }
+  function url(d) { return 'https://www.amazon.' + d + '/review/create-review?&asin=' + ASIN; }
+  var mine = pick();
+  var name = (STORES.filter(function (s) { return s[0] === mine; })[0] || ['com','United States'])[1];
+  document.getElementById('rv-main').innerHTML =
+    '<a class="btn primary" href="' + url(mine) + '" rel="noopener">' + LBL + ' amazon.' + mine + '</a>';
+  document.getElementById('rv-all').innerHTML = STORES.filter(function (s) { return s[0] !== mine; })
+    .map(function (s) { return '<a href="' + url(s[0]) + '" rel="noopener">amazon.' + s[0] + ' &middot; ' + s[1] + '</a>'; })
+    .join('');
+  var b = document.getElementById('rv-more'), box = document.getElementById('rv-all');
+  b.addEventListener('click', function () { box.hidden = !box.hidden; });
+})();
+</script>
+
 <section id="reader">
   <div class="wrap">
     <div class="reader-spot rv">
