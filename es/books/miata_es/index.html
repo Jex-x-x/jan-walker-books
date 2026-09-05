@@ -399,6 +399,19 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
     .join('');
   var b = document.getElementById('rv-more'), box = document.getElementById('rv-all');
   b.addEventListener('click', function () { box.hidden = !box.hidden; });
+  // Пришли по QR из книги (?r=1) — засчитываем отдельным событием. GoatCounter
+  // пишет путь без якоря, поэтому без метки скан кода не отличить от обычного
+  // захода, и мерить эффект приёма было бы нечем.
+  try {
+    if (location.search.indexOf('r=1') !== -1) {
+      var send = function () {
+        if (window.goatcounter && window.goatcounter.count)
+          window.goatcounter.count({ path: 'qr' + location.pathname.replace(/\/$/, ''), title: 'QR из книги', event: true });
+        else setTimeout(send, 1200);
+      };
+      send();
+    }
+  } catch (e) {}
 })();
 </script>
 
