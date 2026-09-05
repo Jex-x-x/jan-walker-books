@@ -382,7 +382,14 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
     } catch (e) {}
     return HOME;
   }
-  function url(d) { return 'https://www.amazon.' + d + '/review/create-review?&asin=' + ASIN; }
+  // Ведём на КАРТОЧКУ книги к блоку отзывов, а не на форму создания отзыва.
+  // Форма /review/create-review отдаёт редирект на /review/create-review/error
+  // всем, кто не имеет права писать отзыв (Amazon требует покупок в аккаунте).
+  // Проверено 05.09.2026: на /error падает и родная кнопка Amazon, и ссылка на
+  // постороннюю книгу — то есть тупик зависит от читателя, а не от адреса.
+  // На карточке Amazon сам решает, что показать, и кнопка «Write a customer
+  // review» там своя. Тупика не бывает никогда.
+  function url(d) { return 'https://www.amazon.' + d + '/dp/' + ASIN + '#customerReviews'; }
   var mine = pick();
   var name = (STORES.filter(function (s) { return s[0] === mine; })[0] || ['com','United States'])[1];
   document.getElementById('rv-main').innerHTML =
