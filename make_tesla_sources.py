@@ -15,12 +15,14 @@ OUT    = DEPLOY / 'books' / 'tesla' / 'sources' / 'index.html'
 src    = json.load(io.open(TESLA / 'sources.json', encoding='utf-8'))
 report = json.load(io.open(TESLA / 'tesla-trivia-v1-en.factcheck.json', encoding='utf-8'))
 
-# шрифты сайта — вырезаем @font-face из готовой страницы
-neighbour = (DEPLOY / 'books' / 'german' / 'index.html').read_text(encoding='utf-8')
-faces = re.findall(r"@font-face\s*\{[^}]*\}", neighbour)
-faces = [f for f in faces if 'Anton' in f or 'Lora' in f]
-assert faces, 'не нашёл @font-face у соседней страницы'
-FONTS = '\n'.join(faces)
+# Шрифты подключаем ссылкой, а не base64. Вшитые TTF давали 353 КБ из 449 —
+# 78% страницы, — и веб-читалки на такой странице спотыкались. Начертания те же,
+# что на остальном сайте (Anton, Lora), плюс честный запасной стек.
+FONTS = ''
+FONT_LINK = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
+             '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
+             'family=Anton&family=Lora:wght@400;600&display=swap">')
 
 PART_TITLES = {}
 for r in report['results']:
@@ -88,6 +90,7 @@ DOC = f'''<html lang="en">
 <meta property="og:title" content="Sources — Ultimate Tesla Challenge">
 <meta property="og:description" content="All ninety questions, each with the source that settles it.">
 <meta property="og:url" content="https://janwalkerbooks.com/books/tesla/sources/">
+{FONT_LINK}
 <style>
 {FONTS}
 :root {{ --paper:#f6f1e5; --paper-deep:#efe8d6; --card:#fcf9f0; --ink:#1d2130;
