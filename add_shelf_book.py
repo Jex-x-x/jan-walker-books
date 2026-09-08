@@ -59,6 +59,24 @@ if m and WORDS.get(n) and m.group(1) != WORDS[n]:
 elif not m:
     print('⚠ заголовок полки не найден — проверь руками')
 
+# --- счётчики в шапке: тоже вшиты и тоже протухали ---
+# «29 books live / 3,150 verified questions» стояло, когда книг был уже 31.
+# Книги = все полки; вопросы = только trivia-полки, christmas считается за 900.
+def _slugs(name):
+    i = s.find(f'const {name} = [')
+    if i < 0: return []
+    return re.findall(r"slug: '([a-z0-9_-]+)'", s[i:s.index('];', i)])
+
+shelves = {n: _slugs(n) for n in ('CARS', 'FAMILY', 'SEASONAL', 'PUZZLES')}
+books = sum(len(v) for v in shelves.values())
+triv = shelves['CARS'] + shelves['FAMILY'] + shelves['SEASONAL']
+questions = sum(900 if x == 'christmas' else 90 for x in triv)
+for lbl, val in (('Books live', f'{books}'), ('Verified questions', f'{questions:,}')):
+    m = re.search(r'<div class="num">([^<]*)</div><div class="lbl">' + lbl + '</div>', s)
+    if m and m.group(1) != val:
+        s = s[:m.start(1)] + val + s[m.end(1):]
+        print(f'счётчик «{lbl}»: {m.group(1)} → {val}')
+
 page.write_text(s)
 print(f"{slug}: карточка на полке первой, обложка {im.size[0]}×{im.size[1]}, "
       f"страница {len(s)/1e3:.0f} KB")
