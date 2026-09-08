@@ -144,7 +144,7 @@ UI['en'] = {
     'T_BUY_PB': 'Paperback on Amazon',
     'T_BUY_K': 'Kindle edition',
     'T_BUY_NOTE': 'Ships worldwide from Amazon · Great as a gift',
-    'T_TRY_KICKER': 'Straight from page {{Q_PAGE_HINT}}',
+    'T_TRY_KICKER': 'Straight from {{Q_PAGE_HINT}}',
     'T_TRY_H': 'Try one on the house.',
     'T_TRY_MORE': 'There are 89 more where that came from.',
     'T_TRY_GET_A': 'Get ',
