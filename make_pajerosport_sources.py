@@ -168,10 +168,10 @@ Where two respectable sources disagree, the book says so in the answer rather th
 more impressive number.</p>
 </header>
 
-<h2>Corrections made before publication</h2>
-<p class="sub">Found by checking every claim one at a time, and in an independent review before
-publication. These claims did not survive that check in their first form. Listed here rather
-than quietly applied.</p>
+<h2>Corrections made while checking</h2>
+<p class="sub">Found by checking every claim one at a time and in an independent review before
+publication; the last three were found after publication, on the reference pages at the back of
+the book, and corrected in the files on sale. Listed here rather than quietly applied.</p>
 <div class="card"><ul>
 {revs}
 </ul></div>
