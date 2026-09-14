@@ -171,7 +171,7 @@ more impressive number.</p>
 <h2>Corrections made while checking</h2>
 <p class="sub">Found by checking every claim one at a time and in an independent review before
 publication; the last three were found after publication, on the reference pages at the back of
-the book, and corrected in the files on sale. Listed here rather than quietly applied.</p>
+the book, and corrected in the files submitted to Amazon on 14 September 2026. Listed here rather than quietly applied.</p>
 <div class="card"><ul>
 {revs}
 </ul></div>
