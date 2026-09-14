@@ -5,7 +5,10 @@
 build.py целиком не гоняется (его словарь BOOKS отстал на несколько книг и он
 перезаписал бы index.html, потеряв правки руками) — правим страницу точечно.
 
-  python3 add_shelf_book.py <slug> "<Название на карточке>" <ASIN> "<крючок>"
+  python3 add_shelf_book.py <slug> "<Название на карточке>" <ASIN> "<крючок>" [обложка.jpg]
+
+Обложка по умолчанию — <slug>/<slug>-ebook-cover.jpg. Пятым аргументом — когда
+папка книги называется иначе, чем адрес на сайте (pajerosport → pajerosport-classic).
 """
 import base64, io, re, sys
 from pathlib import Path
@@ -14,6 +17,7 @@ from PIL import Image
 DEPLOY = Path('/Users/jexxx/autopapyrus-kdp/site/_deploy')
 KDP = Path('/Users/jexxx/autopapyrus-kdp')
 slug, title, asin, hook = sys.argv[1:5]
+cover = Path(sys.argv[5]) if len(sys.argv) > 5 else KDP / slug / f'{slug}-ebook-cover.jpg'
 page = DEPLOY / 'index.html'
 s = page.read_text()
 
@@ -21,7 +25,7 @@ if f"slug: '{slug}'" in s:
     print(f'{slug} уже на полке — ничего не делаю'); sys.exit(0)
 
 # --- обложка 420 px, как у остальных ---
-im = Image.open(KDP / slug / f'{slug}-ebook-cover.jpg').convert('RGB')
+im = Image.open(cover).convert('RGB')
 im = im.resize((420, round(im.height * 420 / im.width)), Image.LANCZOS)
 buf = io.BytesIO(); im.save(buf, 'JPEG', quality=82, optimize=True, progressive=True)
 uri = 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
