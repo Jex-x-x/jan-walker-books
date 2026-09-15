@@ -409,6 +409,7 @@ TRANSLATIONS = {
         short='G-Klasse Trivia',
         title='G-Klasse Trivia & Fakten',
         series='Trivia & Fakten · Autos & Trucks',
+        pb='B0HJWYHBSY', kindle='B0HJWQWQF4',
         pitch='Angestoßen vom Schah von Iran, gebaut für Streitkräfte, 1980 als Papamobil unterwegs und seit 1979 mit fast unveränderter Silhouette aus Graz. Neunzig geprüfte Fragen über 47 Jahre G-Klasse — vom W460 bis zur elektrischen Version, die sich auf der Stelle dreht.'),
     'gwagon_es': dict(
         lang='es', base='gwagon',
