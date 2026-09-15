@@ -412,8 +412,8 @@ TRANSLATIONS = {
         pitch='Angestoßen vom Schah von Iran, gebaut für Streitkräfte, 1980 als Papamobil unterwegs und seit 1979 mit fast unveränderter Silhouette aus Graz. Neunzig geprüfte Fragen über 47 Jahre G-Klasse — vom W460 bis zur elektrischen Version, die sich auf der Stelle dreht.'),
     'gwagon_es': dict(
         lang='es', base='gwagon',
-        short='Clase G Trivia',
-        title='Clase G Trivia y Curiosidades',
+        short='G-Wagon Trivia',
+        title='G-Wagon Trivia y Curiosidades',
         series='Trivia y Curiosidades · Coches y Pickups',
         pitch='Lo impulsó el sah de Irán, se construyó para los ejércitos, en 1980 sirvió de papamóvil y desde 1979 sale de Graz con la silueta casi intacta. Noventa preguntas verificadas sobre 47 años de Clase G, del W460 a la versión eléctrica que gira sobre sí misma.'),
 }
