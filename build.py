@@ -38,9 +38,10 @@ COVERS = {
 }
 
 FONTS = {
-    'FONT_ANTON':  Path('/tmp/Anton-Regular.ttf'),
-    'FONT_LORA':   Path('/tmp/Lora-Regular.ttf'),
-    'FONT_LORA_B': Path('/tmp/Lora-Bold.ttf'),
+    # 15.09: были в /tmp и пропали после перезагрузки; в covers/fonts те же файлы (md5 совпал с вшитыми)
+    'FONT_ANTON':  ROOT / 'covers/fonts/Anton-Regular.ttf',
+    'FONT_LORA':   ROOT / 'covers/fonts/Lora-Regular.ttf',
+    'FONT_LORA_B': ROOT / 'covers/fonts/Lora-Bold.ttf',
 }
 
 CARS_SERIES = 'Trivia & Fun Facts · Cars & Trucks'
@@ -352,6 +353,8 @@ TCOVERS = {
     'supra_es': ROOT / 'supra-es/supra-es-ebook-cover.jpg',
     'wrx_es': ROOT / 'wrx-es/wrx-es-ebook-cover.jpg',
     'wrx_de': ROOT / 'wrx-de/wrx-de-ebook-cover.jpg',
+    'gwagon_de': ROOT / 'gwagon-de/gwagon-de-ebook-cover.jpg',
+    'gwagon_es': ROOT / 'gwagon-es/gwagon-es-ebook-cover.jpg',
 }
 
 TRANSLATIONS = {
@@ -397,6 +400,22 @@ TRANSLATIONS = {
         series='Trivia & Fakten · Autos & Trucks',
         pb='B0HGB7R8PR', kindle='B0HG9HC55T',
         pitch='Subaru baute ein Rallyeauto und verkaufte dem Publikum genau das, was das Reglement zur Homologation verlangte. McRae, die 555-Jahre, alle 424 Exemplare des 22B — neunzig geprüfte Fragen durch drei Jahrzehnte Boxer-Legende.'),
+    # 15.09.2026: G-Wagon DE/ES. ASIN ещё нет (DE в Publishing, ES не залит), а QR в
+    # книге ведёт сюда — KDP требует рабочую ссылку до публикации (приёмка GES-004).
+    # Без kindle страница ведёт покупку на авторскую страницу Amazon, блока отзыва нет,
+    # на полки соседних переводов не попадает. После Live — вписать pb/kindle.
+    'gwagon_de': dict(
+        lang='de', base='gwagon',
+        short='G-Klasse Trivia',
+        title='G-Klasse Trivia & Fakten',
+        series='Trivia & Fakten · Autos & Trucks',
+        pitch='Angestoßen vom Schah von Iran, gebaut für Streitkräfte, 1980 als Papamobil unterwegs und seit 1979 mit fast unveränderter Silhouette aus Graz. Neunzig geprüfte Fragen über 47 Jahre G-Klasse — vom W460 bis zur elektrischen Version, die sich auf der Stelle dreht.'),
+    'gwagon_es': dict(
+        lang='es', base='gwagon',
+        short='Clase G Trivia',
+        title='Clase G Trivia y Curiosidades',
+        series='Trivia y Curiosidades · Coches y Pickups',
+        pitch='Lo impulsó el sah de Irán, se construyó para los ejércitos, en 1980 sirvió de papamóvil y desde 1979 sale de Graz con la silueta casi intacta. Noventa preguntas verificadas sobre 47 años de Clase G, del W460 a la versión eléctrica que gira sobre sí misma.'),
 }
 
 # base slug -> {lang: url-path}. Нужен для hreflang и переключателя языков.
@@ -407,7 +426,8 @@ for _s, _t in TRANSLATIONS.items():
     LANG_PATHS.setdefault(_t['base'], {})[_t['lang']] = f"{_t['lang']}/books/{_s}"
 
 # соседи по языку для «Also on this shelf» на страницах переводов
-TALSO = {s: [x for x in TRANSLATIONS if x != s and TRANSLATIONS[x]['lang'] == t['lang']][:4]
+TALSO = {s: [x for x in TRANSLATIONS if x != s and TRANSLATIONS[x]['lang'] == t['lang']
+             and TRANSLATIONS[x].get('kindle')][:4]
          for s, t in TRANSLATIONS.items()}
 
 
@@ -419,7 +439,7 @@ def editions():
                    cover=COVERS[slug], path=f'books/{slug}', also=ALSO[slug])
     for slug, t in TRANSLATIONS.items():
         yield dict(slug=slug, cfg=slug, base=t['base'], lang=t['lang'], short=t['short'],
-                   title=t['title'], series=t['series'], pb=t.get('pb'), kindle=t['kindle'],
+                   title=t['title'], series=t['series'], pb=t.get('pb'), kindle=t.get('kindle'),
                    pitch=t['pitch'],
                    cover=TCOVERS[slug], path=f"{t['lang']}/books/{slug}", also=TALSO[slug])
 
@@ -718,7 +738,7 @@ def main():
         page = page.replace('{{JSONLD}}', book_ld(slug, title, pitch, lang, ed['path']))
         # У издания может не быть бумаги (немецкий WRX: paperback заблокирован Amazon'ом).
         # Тогда все ссылки «купить» ведут на Kindle, а кнопка «бумага» из блока покупки уходит.
-        k_url = f"https://{AMZ_HOST[lang]}/dp/{ed['kindle']}"
+        k_url = f"https://{AMZ_HOST[lang]}/dp/{ed['kindle']}" if ed.get('kindle') else AMZ_AUTHOR[lang]
         pb_url = f"https://{AMZ_HOST[lang]}/dp/{ed['pb']}" if ed.get('pb') else k_url
         if not ed.get('pb'):
             # строки T_* уже раскрыты выше, поэтому ищем кнопку с готовым текстом
