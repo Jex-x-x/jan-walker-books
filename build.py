@@ -416,6 +416,7 @@ TRANSLATIONS = {
         short='G-Wagon Trivia',
         title='G-Wagon Trivia y Curiosidades',
         series='Trivia y Curiosidades · Coches y Pickups',
+        pb='B0HJY3S2XK', kindle='B0HJY5J3ZJ',
         pitch='Lo impulsó el sah de Irán, se construyó para los ejércitos, en 1980 sirvió de papamóvil y desde 1979 sale de Graz con la silueta casi intacta. Noventa preguntas verificadas sobre 47 años de Clase G, del W460 a la versión eléctrica que gira sobre sí misma.'),
 }
 
