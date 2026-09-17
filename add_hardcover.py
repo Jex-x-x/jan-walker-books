@@ -40,7 +40,7 @@ section = f'''<section id="hardcover">
       <div class="kicker">Hardcover edition</div>
       <h2>Also in hardcover.</h2>
       <div class="rule" style="margin-left:auto;margin-right:auto"></div>
-      <p class="sub" style="margin-left:auto;margin-right:auto">The same ninety verified questions, printed in full colour under a matte hard cover — and every part opens with its own full-page image.</p>
+      <p class="sub" style="margin-left:auto;margin-right:auto">The same ninety verified questions in a full-colour, matte-finish hardcover — and every part opens with its own full-page image.</p>
     </div>
     <div class="aplus-banners">
       <img src="/aplus/{slug}/hc-1.jpg" alt="{B['title']} hardcover — front cover and features" loading="lazy">
