@@ -88,7 +88,7 @@ BOOKS = {
     'halloween': ('Halloween Trivia', 'Halloween Trivia: 90 Things You Think You Know About Halloween', FAM_SERIES.replace('Family Table Books', 'Seasonal Shelf'), 'B0H87S7S1P', 'B0H88FWX5H',
                   'Candy corn, Samhain, and the great razor-blade panic that never actually happened. Ninety verified questions for the household know-it-all — the October book that settles the porch arguments.'),
     'christmas': ('Christmas Trivia', 'Christmas Trivia: 900 Questions and Checked Answers About the Traditions Everyone Repeats', FAM_SERIES.replace('Family Table Books', 'Seasonal Shelf'), 'B0HFCTMH6V', 'B0HFD2PWK1',
-                  'The tree came from Germany but not from Prince Albert; Santa wears red but not because of Coca-Cola; "Jingle Bells" was written for Thanksgiving. Nine hundred fact-checked questions across ten parts — origins, carols, films, Santa, food, the world, traditions, TV, gifts and the oddities that fit nowhere else. The holiday is built from borrowed parts, and the real story beats the dinner-table version every time.'),
+                  'The tree came from Germany but not from Prince Albert; Santa wears red but not because of Coca-Cola; "Jingle Bells" was written for Thanksgiving. Nine hundred questions across ten parts — origins, carols, films, Santa, food, the world, traditions, TV, gifts and the oddities that fit nowhere else. The holiday is built from borrowed parts, and the real story beats the dinner-table version every time.'),
 }
 
 PUZZLE_SERIES = 'Memory Lane Puzzles'
@@ -167,7 +167,7 @@ UI['en'] = {
     'T_RD_P': 'A clean Google&nbsp;Sheets reading tracker &mdash; type the ISBN and the row fills itself: cover, title, author and page count. Ten tabs: Library, TBR, wishlist and a reading challenge that counts as you go.',
     'T_RD_CTA': 'Get the reading tracker on Etsy &rarr;',
     'T_RD_NOTE': 'Digital download &middot; TheGoodKeeper on Etsy',
-    'T_FOOT_TAG': 'Trivia &amp; fun facts, verified twice.',
+    'T_FOOT_TAG': 'Trivia &amp; fun facts. Books that start arguments.',
     'T_FOOT_SUB': 'Paperback &amp; Kindle on Amazon.',
     'T_FOOT_EXPLORE': 'Explore',
     'T_FOOT_ALL': 'All books',
@@ -235,7 +235,7 @@ UI['de'] = {
     'T_RD_P': 'Ein aufgeräumtes Lesetagebuch in Google&nbsp;Sheets &mdash; ISBN eintippen, und die Zeile füllt sich von selbst: Cover, Titel, Autor und Seitenzahl. Zehn Reiter: Bibliothek, Leseliste, Wunschliste und eine Lese-Challenge, die mitzählt. Vorlage auf Englisch.',
     'T_RD_CTA': 'Lesetagebuch auf Etsy ansehen &rarr;',
     'T_RD_NOTE': 'Digitaler Download &middot; TheGoodKeeper auf Etsy',
-    'T_FOOT_TAG': 'Trivia &amp; Fakten, zweifach geprüft.',
+    'T_FOOT_TAG': 'Trivia &amp; Fakten. Bücher, die Diskussionen starten.',
     'T_FOOT_SUB': 'Taschenbuch &amp; Kindle bei Amazon.',
     'T_FOOT_EXPLORE': 'Entdecken',
     'T_FOOT_ALL': 'Alle Bücher (englisch)',
@@ -302,7 +302,7 @@ UI['es'] = {
     'T_RD_P': 'Un registro de lecturas limpio en Google&nbsp;Sheets &mdash; escribe el ISBN y la fila se rellena sola: portada, título, autor y número de páginas. Diez pestañas: biblioteca, pendientes, lista de deseos y un reto de lectura que va contando. Plantilla en inglés.',
     'T_RD_CTA': 'Ver el registro de lecturas en Etsy &rarr;',
     'T_RD_NOTE': 'Descarga digital &middot; TheGoodKeeper en Etsy',
-    'T_FOOT_TAG': 'Trivia y curiosidades, verificadas dos veces.',
+    'T_FOOT_TAG': 'Trivia y curiosidades. Libros que encienden debates.',
     'T_FOOT_SUB': 'Tapa blanda y Kindle en Amazon.',
     'T_FOOT_EXPLORE': 'Explorar',
     'T_FOOT_ALL': 'Todos los libros (en inglés)',
@@ -638,7 +638,7 @@ def build_og():
     d.text((x, 196), 'START', font=anton, fill=(217, 83, 20))
     d.text((x, 296), 'ARGUMENTS.', font=anton, fill=(29, 33, 48))
     d.rectangle([x, 420, x + 130, 425], fill=(198, 15, 46))
-    d.text((x, 448), '19 trivia books · every fact verified twice', font=lora, fill=(69, 74, 89))
+    d.text((x, 448), '19 trivia books · cars, trucks and the family table', font=lora, fill=(69, 74, 89))
     d.text((x, 496), 'TAKE THE ENTRANCE EXAM · JANWALKERBOOKS.COM', font=anton_s, fill=(148, 142, 125))
     covers = ['supra', 'grandpa', 'wrx']
     cx = 760
