@@ -62,6 +62,36 @@ BOOKS = {
          ('supra', 'Toyota Supra Trivia', 'supra/supra-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'nsx': dict(
+   title_raw='NSX Trivia & Fun Facts', short='NSX Trivia', book='nsx', aplus='nsx/v2',
+   pitch=("Most supercars are built to be admired. This one was built to be used. In 1984 Honda "
+          "commissioned a mid-engine concept car from Pininfarina, and the project that grew out of it "
+          "set itself an unusual target: a car that could be measured against Ferrari, but that an "
+          "ordinary person could drive every day. Ninety verified questions &mdash; the all-aluminium "
+          "body, what Senna really did at the N&uuml;rburgring, the first Type R, and the racing car "
+          "that won its class at Le Mans."),
+   parts=[('From HP-X to NS-X.', 'A concept with no doors, and a name'),
+          ('Aluminium and Hands.', 'The body and the factory built for it'),
+          ('Senna and the Ring.', 'How the chassis was made stiff'),
+          ('The V6.', 'Three litres, four valves, titanium'),
+          ('The Everyday Supercar.', 'Visibility, hardware, daily use'),
+          ('The First Type R.', '1992 and 2002: when Honda took things out'),
+          ('Fifteen Years of Updates.', 'Targa, 3.2 litres, fixed headlights'),
+          ('Le Mans and Beyond.', 'The NSX as a racing car'),
+          ('The Second NSX.', 'Hybrid, built in Ohio'),
+          ('Honda&rsquo;s Racing Roots.', 'The company behind the car')],
+   quiz=dict(top='Q21  &middot;  PART 3  &middot;  SENNA AND THE RING',
+             q='What word did Senna use about the NSX prototype&rsquo;s body after driving it?',
+             opts=['Fragile', 'Perfect', 'Heavy', 'Loud'], correct=0,
+             reveal=("Fragile. According to Honda&rsquo;s own account, Senna said he was not sure he could "
+                     "give advice about a mass-production car, but that he felt it was a little fragile. "
+                     "The team took it seriously and set a tougher stiffness target for the body.")),
+   also=[('civic', 'Civic Type R Trivia', 'civic-type-r/civic-type-r-ebook-cover.jpg'),
+         ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg'),
+         ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg'),
+         ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
  'ae86': dict(
    title_raw='AE86 Trivia & Fun Facts', short='AE86 Trivia', book='ae86', aplus='ae86',
    pitch=("Toyota did not set out to build a legend. Retooling a plant for front-wheel drive ran to more "
@@ -119,21 +149,28 @@ def build(slug):
 
     # 2. ролик: вертикальный мастер, версионное имя по размеру, постер с финальным кадром
     mp4 = KDP / 'video' / 'out' / f"{cfg['book']}-quiz-vertical.mp4"
-    w, h = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
-                           'stream=width,height', '-of', 'csv=p=0', str(mp4)],
-                          capture_output=True, text=True).stdout.strip().split(',')[:2]
-    assert int(h) > int(w), f'мастер не вертикальный: {w}x{h}'
-    vdir = DEPLOY / 'video'
-    ver = mp4.stat().st_size
-    vname, pname = f'{slug}-promo-{ver}.mp4', f'{slug}-promo-{ver}-poster.jpg'
-    shutil.copy(mp4, vdir / vname)
-    shutil.copy(mp4, vdir / f'{slug}-promo.mp4')
-    subprocess.run(['ffmpeg', '-y', '-ss', '23.6', '-i', str(mp4), '-frames:v', '1', '-q:v', '4',
-                    str(vdir / pname), '-loglevel', 'error'], check=True)
-    for old, new in ((f"/video/{DONOR['slug']}-promo-{donor_ver}-poster.jpg", f'/video/{pname}'),
-                     (f"/video/{DONOR['slug']}-promo-{donor_ver}.mp4", f'/video/{vname}')):
-        assert old in s, old
-        s = s.replace(old, new)
+    if not mp4.exists():
+        # Ролика ещё нет (будет после выхода книги): секцию трейлера убираем, чтобы не показывать видео донора.
+        tr = re.search(r'<section id="trailer">.*?</section>\n\n', s, re.S)
+        assert tr, 'секция трейлера донора не найдена'
+        s = s[:tr.start()] + s[tr.end():]
+        vname = '(нет ролика)'
+    else:
+        w, h = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
+                               'stream=width,height', '-of', 'csv=p=0', str(mp4)],
+                              capture_output=True, text=True).stdout.strip().split(',')[:2]
+        assert int(h) > int(w), f'мастер не вертикальный: {w}x{h}'
+        vdir = DEPLOY / 'video'
+        ver = mp4.stat().st_size
+        vname, pname = f'{slug}-promo-{ver}.mp4', f'{slug}-promo-{ver}-poster.jpg'
+        shutil.copy(mp4, vdir / vname)
+        shutil.copy(mp4, vdir / f'{slug}-promo.mp4')
+        subprocess.run(['ffmpeg', '-y', '-ss', '23.6', '-i', str(mp4), '-frames:v', '1', '-q:v', '4',
+                        str(vdir / pname), '-loglevel', 'error'], check=True)
+        for old, new in ((f"/video/{DONOR['slug']}-promo-{donor_ver}-poster.jpg", f'/video/{pname}'),
+                         (f"/video/{DONOR['slug']}-promo-{donor_ver}.mp4", f'/video/{vname}')):
+            assert old in s, old
+            s = s.replace(old, new)
 
     # 3. A+ модули 1, 5, 6
     apd = DEPLOY / 'aplus' / slug
