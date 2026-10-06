@@ -92,6 +92,34 @@ BOOKS = {
          ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ '300zx': dict(
+   title_raw='300ZX Trivia & Fun Facts', short='300ZX Trivia', book='z32', aplus='z32/v2',
+   pitch=("A sports car was drawn in 1984 that Nissan did not sell until 1989. Toshio Yamashita began the "
+          "Z32, a Cray-2 supercomputer helped shape its body, and it carried a 3.0-litre V6 with two "
+          "turbochargers. Ninety verified questions &mdash; who drew it, the four-wheel steering, the "
+          "Super Bowl commercial Nissan pulled after one showing, and the racing 300ZX that won "
+          "Daytona outright."),
+   parts=[('Mr. K and the Z.', 'From the 240Z to the V6 300ZX'),
+          ('Drawn in 1984.', 'The design, the MID4 and a supercomputer'),
+          ('Three Litres, Two Turbos.', 'The VG30 engines and the 280 PS limit'),
+          ('Steering with Four Wheels.', 'Super HICAS, suspension and brakes'),
+          ('Many Shapes, Many Markets.', 'Bodies, trims and where they were built'),
+          ('Launch, Awards and Sales.', '1990 to 1996, and the price that rose'),
+          ('The Ad Nissan Pulled.', 'A Super Bowl spot, toys and a Lamborghini'),
+          ('From Lime Rock to Daytona.', 'Racing 300ZXs, 1985 to 1995'),
+          ('Tuners and Special Editions.', 'SR-71, SMZ and the Bonneville record'),
+          ('The Last Z32.', 'What came after, and what did not')],
+   quiz=dict(top='Q56  &middot;  PART 7  &middot;  THE AD NISSAN PULLED',
+             q='How many times did Nissan&rsquo;s Ridley Scott Super Bowl commercial run?',
+             opts=['Once', 'Twice', 'Ten times', 'Throughout the whole 1990 season'], correct=0,
+             reveal=("Once. Nissan aired the commercial during the Super Bowl and did not repeat it; "
+                     "safety groups objected, and the company defended the spot as clearly fanciful.")),
+   also=[('civic', 'Civic Type R Trivia', 'civic-type-r/civic-type-r-ebook-cover.jpg'),
+         ('nsx', 'NSX Trivia', 'nsx/nsx-ebook-cover.jpg'),
+         ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg'),
+         ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
  'ae86': dict(
    title_raw='AE86 Trivia & Fun Facts', short='AE86 Trivia', book='ae86', aplus='ae86',
    pitch=("Toyota did not set out to build a legend. Retooling a plant for front-wheel drive ran to more "
