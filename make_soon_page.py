@@ -120,6 +120,62 @@ BOOKS = {
          ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'e30': dict(
+   title_raw='E30 Trivia & Fun Facts', short='E30 Trivia', book='e30', aplus='e30/v2',
+   pitch=("The most famous car in this book has four cylinders, not six. BMW built about 2.3 million E30s "
+          "between 1982 and 1994, and from one of them, made under a racing rule, it produced a road car "
+          "that won the championships it was designed for. Ninety verified questions &mdash; the M3 and "
+          "its homologation rule, Camshaft Paul and the S14 engine, the touring-car titles, and the "
+          "tuner that became a manufacturer."),
+   parts=[('The Compact BMW.', 'From the 1975 3 Series to the E30'),
+          ('Bodies and Engines.', 'The E30 range, 1982 to 1994'),
+          ('Made for Other Markets.', 'America, South Africa and the tax specials'),
+          ('A Racing Car with a Number Plate.', 'The M3, 1985 to 1991'),
+          ('Four Cylinders, Six-Cylinder Genes.', 'The S14 engine'),
+          ('Touring Cars.', 'DTM, Europe and the world, 1987 to 1992'),
+          ('Endurance and Bragging Rights.', 'N&uuml;rburgring, Spa and Macau'),
+          ('Alpina.', 'The tuner that became a manufacturer'),
+          ('The M Division.', 'The people who built the engines'),
+          ('What Came After.', 'The E36 and the E30&rsquo;s design DNA')],
+   quiz=dict(top='Q39  &middot;  PART 5  &middot;  FOUR CYLINDERS, SIX-CYLINDER GENES',
+             q='What was Paul Rosche&rsquo;s nickname, because of his early specialisation in camshaft calculation?',
+             opts=['Piston Paul', 'Turbo Paul', 'Crank Paul', 'Camshaft Paul'], correct=3,
+             reveal=("Camshaft Paul &mdash; in German, Nocken-Paul. Rosche ran BMW&rsquo;s racing-engine "
+                     "development, led the S14, and retired in 1999 at the age of 65.")),
+   also=[('civic', 'Civic Type R Trivia', 'civic-type-r/civic-type-r-ebook-cover.jpg'),
+         ('nsx', 'NSX Trivia', 'nsx/nsx-ebook-cover.jpg'),
+         ('300zx', '300ZX Trivia', 'z32/z32-ebook-cover.jpg'),
+         ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'z3': dict(
+   title_raw='Z3 Trivia & Fun Facts', short='Z3 Trivia', book='z3', aplus='z3/v2',
+   pitch=("BMW paid nothing for the Z3&rsquo;s part in a Bond film, and the placement turned into one of the "
+          "most successful of 1995. The little roadster was built in South Carolina, not Germany, and "
+          "a hundred replicas of the film car went through a Christmas catalogue. Ninety verified questions "
+          "&mdash; the Z1 that came before it, the Spartanburg plant, the engine range from fours to the "
+          "M Roadster, and the Coupe nicknamed the clown shoe."),
+   parts=[('The Roadster Before It.', 'The Z1 and the Fun Car, 1985 to 1992'),
+          ('Drawn in Munich.', 'The Fun Car, the board and the E36 underneath'),
+          ('Built in Carolina.', 'Spartanburg, South Carolina, 1992 to 2002'),
+          ('The Spy&rsquo;s Car.', 'GoldenEye, 1995'),
+          ('A Hundred Cars for the Catalogue.', 'The launch and the 007 Edition'),
+          ('Fours and Sixes.', 'The engine range, 1995 to 2002'),
+          ('The M Roadster.', 'The Z3 M, 1997 to 2002'),
+          ('The Clown Shoe.', 'The Z3 Coup&eacute;, 1997 to 2002'),
+          ('Prototypes, Specials and Totals.', 'V12, MotoGP and the final count'),
+          ('Owners and the Last Car.', 'The club, the Homecoming and the Z4')],
+   quiz=dict(top='Q31  &middot;  PART 4  &middot;  THE SPY&rsquo;S CAR',
+             q='How much did BMW pay for the placement of the Z3 in the film?',
+             opts=['About $1 million', 'About $10 million', 'About $50 million', 'Nothing'], correct=3,
+             reveal=("Nothing. No money changed hands: BMW tied the film to the car&rsquo;s launch "
+                     "campaign instead, and it had script approval.")),
+   also=[('civic', 'Civic Type R Trivia', 'civic-type-r/civic-type-r-ebook-cover.jpg'),
+         ('e30', 'E30 Trivia', 'e30/e30-ebook-cover.jpg'),
+         ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg'),
+         ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
  'ae86': dict(
    title_raw='AE86 Trivia & Fun Facts', short='AE86 Trivia', book='ae86', aplus='ae86',
    pitch=("Toyota did not set out to build a legend. Retooling a plant for front-wheel drive ran to more "
@@ -248,6 +304,13 @@ def build(slug):
     s = s.replace(DONOR['title_raw'].replace('&', '&amp;'), title)
     s = s.replace(DONOR['title_raw'], cfg['title_raw'])
     s = s.replace(DONOR['short'], cfg['short'])
+
+    # 6б. «2 sources per fact» — у BMW-книг часть фактов с одним источником (factcheck.json), число не подтверждено
+    s = s.replace('<div class="num">2</div><div class="lbl">Sources per fact</div>',
+                  '<div class="num">4</div><div class="lbl">Choices per question</div>')
+
+    s = s.replace('Every fact verified against two independent sources.',
+                  'Facts checked against reference works and period coverage.')
 
     # 7. КНОПКИ ПОКУПКИ → блок «скоро». Ссылок на Amazon у книги без ASIN быть не должно.
     buy = re.search(r'<a class="btn primary" href="https://www\.amazon\.com/dp/[A-Z0-9]+"[^>]*>[^<]*</a>\s*'
