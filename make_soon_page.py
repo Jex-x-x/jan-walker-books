@@ -120,6 +120,35 @@ BOOKS = {
          ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'vwbus': dict(
+   allow=['Volkswagen'],
+   title_raw='Microbus Trivia & Fun Facts', short='Microbus Trivia', book='vwbus', aplus='vwbus',
+   pitch=("In April 1947 a Dutch importer drew a van with the driver at the very front and a payload of "
+          "690 kilograms, and the sketch became the most recognisable vehicle in the world. Volkswagen says "
+          "13 million Transporters have been sold since 1950, in five countries. Ninety verified questions "
+          "&mdash; the Splittie and the 23-window Samba, the camper conversions, a Vanagon with a Porsche "
+          "engine, the Chicken Tax, and the electric successor."),
+   parts=[('The Sketch.', 'An importer, a doodle, 1947 to 1950'),
+          ('The Splittie.', 'The first generation, 1950 to 1967'),
+          ('The Samba.', 'Twenty-three windows and a sunroof'),
+          ('The Bay Window.', 'The second generation, 1967 to 1979'),
+          ('The Camper.', 'Westfalia and the pop-up roof'),
+          ('The Vanagon.', 'Square, water-cooled, four-wheel drive'),
+          ('The Front-Engined Bus.', 'The T4, 1990 to 2003'),
+          ('Around the World.', 'Brazil, Mexico and the last Kombi'),
+          ('The Counterculture and the Chicken Tax.', 'A tariff and a symbol'),
+          ('The Ultimate Fan Challenge.', 'From the T5 to the electric ID. Buzz')],
+   quiz=dict(top='Q73  &middot;  PART 9  &middot;  THE CHICKEN TAX',
+             q='What rate did the Chicken Tax put on imported light trucks?',
+             opts=['4%', '10%', '25%', '50%'], correct=2,
+             reveal=("25 per cent &mdash; introduced in January 1964 as retaliation for European tariffs on "
+                     "American chicken. The van counted as a light truck, so it was hit too.")),
+   also=[('e30', 'E30 Trivia', 'e30/e30-ebook-cover.jpg'),
+         ('z3', 'Z3 Trivia', 'z3/z3-ebook-cover.jpg'),
+         ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg'),
+         ('supra', 'Toyota Supra Trivia', 'supra/supra-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
  'e30': dict(
    title_raw='E30 Trivia & Fun Facts', short='E30 Trivia', book='e30', aplus='e30/v2',
    pitch=("The most famous car in this book has four cylinders, not six. BMW built about 2.3 million E30s "
@@ -346,6 +375,8 @@ def build(slug):
     s = s.replace(old_also, f'<div class="also">{cards}</div>')
     probe = re.sub(r'<div class="also">.*?</div>\n  </div>', '', s, flags=re.S)
     probe = re.sub(r'data:image/\w+;base64,[A-Za-z0-9+/=]+', '', probe)
+    for t in cfg.get('allow', []):
+        probe = probe.replace(t, '')
     leftovers = re.findall(DONOR['leftovers'], probe)
     assert not leftovers, f'остались следы донора: {set(leftovers)}'
     assert 'amazon.com/dp/' not in s, 'осталась ссылка на несуществующий товар'
