@@ -120,6 +120,35 @@ BOOKS = {
          ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'etype': dict(
+   allow=['Jaguar'],
+   title_raw='E-Type Trivia & Fun Facts', short='E-Type Trivia', book='etype', aplus='etype',
+   pitch=("The E-Type began as a racing car with the racing taken out. Jaguar won Le Mans five times with the "
+          "C-Type and the D-Type, and in March 1961 it unveiled the road car in Geneva, claiming 150 mph at about "
+          "half the price of its exotic rivals. About 72,500 were built before production ended in 1974. Ninety "
+          "verified questions &mdash; the man who drew it with slide rules, the XK engine, the Series 1, 2 and 3, the "
+          "V12, the Lightweight and the electric E-type Zero."),
+   parts=[('From Le Mans to the Road.', 'The C-Type, the D-Type and the XKSS'),
+          ('The Man Who Drew It.', 'Malcolm Sayer and William Lyons'),
+          ('Geneva, March 1961.', 'The launch and the claims'),
+          ('The XK Engine and the Gearbox.', '3.8 litres, then 4.2'),
+          ('Series 1 Cars.', 'Glass headlights, 1961 to 1967'),
+          ('Series 1&frac12; and Series 2.', 'American safety rules, 1967 to 1971'),
+          ('Series 3 and the V12.', 'The last E-Types, 1971 to 1974'),
+          ('Racing Specials and Rarities.', 'The Lightweight and the XJ13'),
+          ('Prices and Numbers.', 'What it cost, what it fetches, how many'),
+          ('The Legend and the Ultimate Fan Challenge.', '1996 to today')],
+   quiz=dict(top='Q47  &middot;  PART 6  &middot;  GLASS HEADLIGHTS',
+             q='What was removed from the Series 2 headlights?',
+             opts=['The bulbs', 'The chrome surround', 'The glass covers', 'The indicators'], correct=2,
+             reveal=("The glass covers. They were removed from cars everywhere, largely because of American "
+                     "safety rules, and the Series 1½ of 1967 and 1968 is what owners call the cars in between.")),
+   also=[('vwbus', 'Microbus Trivia', 'vwbus/vwbus-ebook-cover.jpg'),
+         ('e30', 'E30 Trivia', 'e30/e30-ebook-cover.jpg'),
+         ('z3', 'Z3 Trivia', 'z3/z3-ebook-cover.jpg'),
+         ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
  'vwbus': dict(
    allow=['Volkswagen'],
    title_raw='Microbus Trivia & Fun Facts', short='Microbus Trivia', book='vwbus', aplus='vwbus',
