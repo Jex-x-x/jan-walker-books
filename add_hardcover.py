@@ -14,6 +14,11 @@ KDP = Path('/Users/jexxx/autopapyrus-kdp')
 DEPLOY = KDP / 'site' / '_deploy'
 
 BOOKS = {   # slug на сайте: ASIN hardcover, папка премиального A+, название для alt
+    'supra': dict(asin='B0HN5DKVJP', aplus='supra-hc', title='Toyota Supra Trivia &amp; Fun Facts'),
+    'miata': dict(asin='B0HN5TTNRS', aplus='miata-hc', title='Mazda MX-5 Miata Trivia &amp; Fun Facts'),
+    'wrx': dict(asin='B0HNN72HXM', aplus='wrx-hc', title='Subaru WRX Trivia &amp; Fun Facts'),
+    'skyline': dict(asin='B0HNNTLVWQ', aplus='skyline-hc', title='Skyline GT-R Trivia &amp; Fun Facts'),
+    'gwagon': dict(asin='B0HK4G1F5Z', aplus='gwagon-hc', title='G-Wagon Trivia &amp; Fun Facts'),
     'pajerosport': dict(asin='B0HK3BG73Y', aplus='pajerosport-hc', title='Pajero Sport Trivia &amp; Fun Facts'),
 }
 
