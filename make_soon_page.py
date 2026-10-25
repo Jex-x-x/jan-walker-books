@@ -32,6 +32,62 @@ DONOR = dict(
 )
 
 BOOKS = {
+ 'countach': dict(
+   allow=['Lamborghini'],
+   title_raw='Lamborghini Countach Trivia & Fun Facts', short='Lamborghini Countach Trivia', book='countach', aplus='countach',
+   pitch=("It began in 1970 as a project called LP112. A designer at Bertone drew the wedge, a prototype appeared "
+          "at Geneva in 1971, and for sixteen years it decided what a supercar should look like. Ninety verified "
+          "questions &mdash; the name nobody can pin down, the doors borrowed from a concept car, the periscope in "
+          "the roof, the Formula One owner who wanted more, and the 112 that came back in 2021."),
+   parts=[("The Miura's Successor.", "Sant'Agata, 1963 to 1974"),
+          ('The Name and the Doors.', 'An exclamation and a hinge at the front'),
+          ('The Wedge.', 'A tube frame, aluminium skin and a periscope'),
+          ('The LP400.', 'The first production cars, 1974 to 1978'),
+          ('The LP400 S and Wolf.', 'Wide tyres and a Formula One owner'),
+          ('Five Litres and Four Valves.', 'The LP500 S and the Quattrovalvole'),
+          ('The 25th Anniversary.', 'The final cars, 1988 to 1990'),
+          ('One-Offs and Specials.', 'Turbos, race cars and a testbed'),
+          ('The Man Who Drew It.', 'Marcello Gandini, 1938 to 2024'),
+          ('After the Countach.', 'The successors and the LPI 800-4')],
+   quiz=dict(top='Q24  &middot;  PART 3  &middot;  THE WEDGE',
+             q='What did the roof-mounted periscope of the LP400 do?',
+             opts=['It gave a view to the rear', 'It cooled the engine', 'It held the aerial', 'It lit the road ahead'], correct=0,
+             reveal=("It gave a view to the rear &mdash; the system came from a safety project, and it let the driver "
+                     "see behind a car with almost no rear window. Later cars used conventional mirrors.")),
+   also=[('boxster', 'Porsche Boxster Trivia', 'boxster/boxster-ebook-cover.jpg'),
+         ('etype', 'E-Type Trivia', 'etype/etype-ebook-cover.jpg'),
+         ('nsx', 'NSX Trivia', 'nsx/nsx-ebook-cover.jpg'),
+         ('supra', 'Toyota Supra Trivia', 'supra/supra-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
+ 'boxster': dict(
+   allow=['Porsche'],
+   title_raw='Porsche Boxster Trivia & Fun Facts', short='Porsche Boxster Trivia', book='boxster', aplus='boxster',
+   pitch=("In the early 1990s Porsche was in trouble, and a sketch from 1992 became the roadster that helped pull it "
+          "out. Ninety verified questions &mdash; a name made of boxer and Speedster, the plant on the coast of "
+          "Finland, the bearing that ended up in a class action, a coup&eacute; named after a reptile, and the "
+          "last cars of 2025."),
+   parts=[('The Rescue Mission.', 'A company in trouble, a sketch from 1992'),
+          ('A Name and a Family Tree.', 'Boxer plus Speedster, the 550 and 718'),
+          ('Stuttgart and Finland.', 'Where the cars were built, 1995 to 2011'),
+          ('The 986.', 'Two and a half litres, 1996 to 2004'),
+          ('The Boxster S.', 'Three and a half litres, 2000 to 2004'),
+          ('The Engine Problem.', 'Liners, blocks and a bearing'),
+          ('The 987.', 'Round dials and a canvas-roof Spyder'),
+          ('The Cayman.', 'A roof, a reptile and a zoo'),
+          ('The 981.', 'Longer, stiffer and lighter'),
+          ('The 718 and After.', 'Four cylinders and an ending, 2025')],
+   quiz=dict(top='Q65  &middot;  PART 8  &middot;  THE CAYMAN',
+             q="What did Porsche adopt at Stuttgart's Wilhelma Zoo when the Cayman reached dealers?",
+             opts=['Four caimans', 'A pair of penguins', 'A flock of ravens', 'A stable of horses'], correct=0,
+             reveal=("Four caimans &mdash; the coup&eacute; was named after the reptile, and the adoption was a "
+                     "marketing gesture tied to the name.")),
+   also=[('countach', 'Lamborghini Countach Trivia', 'countach/countach-ebook-cover.jpg'),
+         ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg'),
+         ('z3', 'Z3 Trivia', 'z3/z3-ebook-cover.jpg'),
+         ('s2000', 'S2000 Trivia', 's2000/s2000-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
  'rx7': dict(
    title_raw='RX-7 Trivia & Fun Facts', short='RX-7 Trivia', book='rx7', aplus='rx7',
    pitch=("Mazda licensed an engine in 1961 that scored deep marks into its own housings within hours "
