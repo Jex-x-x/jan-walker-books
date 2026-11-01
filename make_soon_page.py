@@ -88,6 +88,62 @@ BOOKS = {
          ('s2000', 'S2000 Trivia', 's2000/s2000-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
+ 'landcruiser': dict(
+   title_raw='Land Cruiser Trivia & Fun Facts', short='Land Cruiser Trivia', book='landcruiser', aplus='landcruiser/v2',
+   pitch=("In 1951 a small four-wheel-drive prototype climbed further up Mount Fuji than any vehicle had gone "
+          "before, and the police quickly ordered 289. Ninety verified questions across ten parts &mdash; a name "
+          "born in a trademark complaint, the first vehicle built abroad, the wagon owners called the Moose, the "
+          "workhorse that never retired, a V8 that started an argument, nine Dakar class wins in a row and ten "
+          "million sold."),
+   parts=[('Before the Name.', 'A wartime truck, a police order and a mountain'),
+          ('The Name.', 'A trademark complaint and the first exports'),
+          ('The Forty.', 'The shape everyone draws, 1960 to 1984'),
+          ('The Moose.', 'The first real station wagon, 1967'),
+          ('The Sixty.', 'Air conditioning and a million sales'),
+          ('The Seventy.', 'The workhorse that would not retire'),
+          ('The Eighty.', 'The rounded one, 1990 to 1997'),
+          ('The Hundred.', 'A V8 and an argument, 1998 to 2007'),
+          ('The Two Hundred.', 'Crawl control and a desert class'),
+          ('The Three Hundred.', 'Lighter, V6, and ten million sold')],
+   quiz=dict(top='Q47  &middot;  PART 6  &middot;  THE SEVENTY',
+             q='What was special about the seats in the back of the Troop Carrier?',
+             opts=['They faced inwards', 'They faced backwards', 'They folded into the roof', 'There were none'], correct=0,
+             reveal=("They faced inwards &mdash; the Troop Carrier was a long hard top with inward-facing rear seats, "
+                     "and from 1999 it carried the model number 78.")),
+   also=[('4runner', '4Runner Trivia', '4runner/4runner-ebook-cover.jpg'),
+         ('tacoma', 'Tacoma Trivia', 'tacoma/tacoma-ebook-cover.jpg'),
+         ('supra', 'Supra Trivia', 'supra/supra-ebook-cover.jpg'),
+         ('wrx', 'WRX Trivia', 'wrx/wrx-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
+ 'evo': dict(
+   title_raw='Lancer Evolution Trivia & Fun Facts', short='Lancer Evolution Trivia', book='evo', aplus='evo/v2',
+   pitch=("It began because a rulebook demanded it. When a wild class of rallying was banned, the new top class "
+          "asked for a road car with a turbocharged two-litre engine and four-wheel drive, sold by the thousand. "
+          "Ninety verified questions &mdash; the engine from 1980, the 280 PS agreement, the cars that sold out in "
+          "three days, four titles in a row, the first automatic, a British version that kept pace with an Italian "
+          "supercar, and the tenth and final Evolution."),
+   parts=[('Before the Evolution.', 'A banned class and a family saloon'),
+          ('The First Evolutions.', "A Galant's heart in a Lancer, 1992"),
+          ('The Third Evolution.', 'A new nose and a four from 1980'),
+          ('The Fourth Evolution.', 'An engine turned round, 1996'),
+          ('Wider and Cooler.', 'The Evolution V and VI, 1998 to 1999'),
+          ('The Flying Finn.', 'Four titles in a row, 1996 to 1999'),
+          ('New Rules.', 'The first automatic and a new rule book'),
+          ('Evolution Goes West.', 'America and the FQ-400, 2003 to 2005'),
+          ('The Last of the 4G63.', 'MIVEC and a wagon, 2005 to 2007'),
+          ('The Tenth and Final.', 'A new engine, then the end, 2016')],
+   quiz=dict(top='Q31  &middot;  PART 4  &middot;  THE FOURTH EVOLUTION',
+             q='How long did the 6,000 Evolution IVs take to sell out in Japan?',
+             opts=['Three days', 'Three weeks', 'Three months', 'Three years'], correct=0,
+             reveal=("Three days &mdash; all of them were gone three days after the car went on sale in 1996, a sign "
+                     "of the demand the Evolution had built up.")),
+   also=[('wrx', 'WRX Trivia', 'wrx/wrx-ebook-cover.jpg'),
+         ('supra', 'Supra Trivia', 'supra/supra-ebook-cover.jpg'),
+         ('s2000', 'S2000 Trivia', 's2000/s2000-ebook-cover.jpg'),
+         ('miata', 'MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
  'rx7': dict(
    title_raw='RX-7 Trivia & Fun Facts', short='RX-7 Trivia', book='rx7', aplus='rx7',
    pitch=("Mazda licensed an engine in 1961 that scored deep marks into its own housings within hours "

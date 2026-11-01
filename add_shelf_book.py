@@ -53,7 +53,8 @@ s = s[:k] + f" '{slug}': '{uri}'," + s[k:]
 # двадцать. Считаем карточки и переписываем число словом.
 WORDS = {14:'Fourteen',15:'Fifteen',16:'Sixteen',17:'Seventeen',18:'Eighteen',19:'Nineteen',
          20:'Twenty',21:'Twenty-one',22:'Twenty-two',23:'Twenty-three',24:'Twenty-four',
-         25:'Twenty-five',26:'Twenty-six',27:'Twenty-seven',28:'Twenty-eight'}
+         25:'Twenty-five',26:'Twenty-six',27:'Twenty-seven',28:'Twenty-eight',29:'Twenty-nine',30:'Thirty',
+         31:'Thirty-one',32:'Thirty-two',33:'Thirty-three',34:'Thirty-four',35:'Thirty-five',36:'Thirty-six',37:'Thirty-seven',38:'Thirty-eight'}
 i = s.index('const CARS = ['); j = s.index('];', i)
 n = s[i:j].count("slug: '")
 m = re.search(r'<h2>The garage\. (\w+(?:-\w+)?) machines\.</h2>', s)
