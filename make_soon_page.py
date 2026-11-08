@@ -32,6 +32,35 @@ DONOR = dict(
 )
 
 BOOKS = {
+ 'rx8': dict(
+   title_raw='RX-8 Trivia & Fun Facts', short='RX-8 Trivia', book='rx8', aplus='rx8/v2',
+   pitch=("A sports car with four doors, no pillar between them and an engine with no pistons. It sounds "
+          "like a committee's compromise. A German engineer designed a rotary compressor in the 1920s, a "
+          "motorcycle maker turned it into an engine, and a small Japanese company bet its future on it. "
+          "Ninety verified questions across ten parts &mdash; the cockroach car and the condition for four "
+          "doors, an exhaust moved to the side, the editions of four countries, and the only Le Mans win "
+          "by a car without pistons."),
+   parts=[('A Rotor in a Workshop.', 'Felix Wankel and the first car'),
+          ("Devil's Fingernails.", 'The first Cosmos, 1961 to 1968'),
+          ('Three Turns of the Shaft.', 'How a rotary engine counts'),
+          ('The Cockroach Car.', 'How four doors were approved'),
+          ('Four Doors, No Pillar.', 'A body that opens like a gate'),
+          ('Renesis.', 'The exhaust that moved to the side'),
+          ('A Name for Every Market.', 'Special editions, 2003 to 2008'),
+          ('The Facelift and the Fix.', 'What changed in 2008'),
+          ('The Only Rotary at Le Mans.', 'The 787B and the race of 1991'),
+          ('The Last Rotary.', 'The end of the line, 2012')],
+   quiz=dict(top='Q77  &middot;  PART 9  &middot;  THE ONLY ROTARY AT LE MANS',
+             q='What makes the 787B win at Le Mans in 1991 unique?',
+             opts=['Only win by a car without pistons', 'First win by an American team', 'First win in the rain', 'It was won with a hybrid'], correct=0,
+             reveal=("Only win by a car without pistons &mdash; it won on reliability and fuel economy, not "
+                     "outright speed. No other car without a piston engine has won the race since.")),
+   also=[('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg'),
+         ('miata', 'MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg'),
+         ('nsx', 'NSX Trivia', 'nsx/nsx-ebook-cover.jpg'),
+         ('z32', '300ZX Trivia', 'z32/z32-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
  'countach': dict(
    allow=['Lamborghini'],
    title_raw='Lamborghini Countach Trivia & Fun Facts', short='Lamborghini Countach Trivia', book='countach', aplus='countach',
