@@ -61,6 +61,36 @@ BOOKS = {
          ('z32', '300ZX Trivia', 'z32/z32-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
+ 'miata2': dict(
+   title_raw='MX-5 Miata Trivia & Fun Facts, Volume 2', short='MX-5 Miata Trivia, Volume 2', book='miata2', aplus='miata2/v2',
+   pitch=("The roadster that reinvented an entire segment gets a second volume of what the first one left out. "
+          "In Japan it was sold under a different badge entirely. An electric prototype was built in 1993 with "
+          "a regional power company and never reached a showroom, and a windscreen-less concept followed in "
+          "2009. A factory restoration programme for the very first car began in 2017. Ninety verified questions "
+          "across ten parts &mdash; concepts that never left a trade-show stand, a fire that nearly ended a "
+          "production run, the longest-running one-make race series recognised by Guinness World Records, and "
+          "the cars built on its chassis under other names."),
+   parts=[('Bugs in the Teeth.', 'A journalist, two studios and a prototype from Sussex'),
+          ('Horse and Rider.', 'How the first car was engineered and shaped'),
+          ('The Car Without a Badge.', 'A different badge in Japan, 1989 to 1998'),
+          ('Made for One Country.', 'Special editions from Britain to the Philippines'),
+          ('Boost, Buybacks and a Fire.', "The second generation's strangest stories"),
+          ('Never Built.', 'Concepts and one-offs, 1993 to 2016'),
+          ('Factory Fresh at Thirty.', 'A factory restoration programme for the first car'),
+          ('Still Getting Better.', 'The fourth generation after its launch'),
+          ('Racing for Everyone.', "From a journalists' enduro to a $200,000 prize"),
+          ('In Other Clothes.', 'Cars built on the Roadster, and the last questions')],
+   quiz=dict(top='Q75  &middot;  PART 9  &middot;  RACING FOR EVERYONE',
+             q='In 2024 Guinness World Records recognised the Media 4-Hour race for what?',
+             opts=['The longest-running one-make car racing series', 'The most cars in one race', 'The longest race for production cars', 'The most journalists on one grid'], correct=0,
+             reveal=("The longest-running one-make car racing series &mdash; the 2024 race was the 35th, held almost "
+                     "every year since 1989 with every car at standard specification.")),
+   also=[('miata', 'MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg'),
+         ('rx8', 'RX-8 Trivia', 'rx8/rx8-ebook-cover.jpg'),
+         ('s2000', 'S2000 Trivia', 's2000/s2000-ebook-cover.jpg'),
+         ('boxster', 'Porsche Boxster Trivia', 'boxster/boxster-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release · paperback and Kindle, worldwide from Amazon')),
  'countach': dict(
    allow=['Lamborghini'],
    title_raw='Lamborghini Countach Trivia & Fun Facts', short='Lamborghini Countach Trivia', book='countach', aplus='countach',
