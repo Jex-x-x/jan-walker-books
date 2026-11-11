@@ -22,6 +22,8 @@ BOOKS = {   # slug на сайте: ASIN hardcover, папка премиаль�
     'pajerosport': dict(asin='B0HK3BG73Y', aplus='pajerosport-hc', title='Pajero Sport Trivia &amp; Fun Facts'),
     '4runner': dict(asin='B0HPKVS16Q', aplus='4runner-hc', title='Toyota 4Runner Trivia &amp; Fun Facts'),
     's2000': dict(asin='B0HPL31ZQ3', aplus='s2000-hc', title='Honda S2000 Trivia &amp; Fun Facts'),
+    'rx8': dict(asin='B0HR2SFK5B', aplus='rx8-hc', title='RX-8 Trivia &amp; Fun Facts'),
+    'miata2': dict(asin='B0HR2ZZ351', aplus='miata2-hc', title='MX-5 Miata Trivia &amp; Fun Facts, Volume 2'),
 }
 
 slug = sys.argv[1]
