@@ -435,6 +435,67 @@ BOOKS = {
          ('wrx', 'Subaru WRX Trivia', 'wrx/wrx-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'celica': dict(
+   title_raw='Celica Trivia & Fun Facts', short='Celica Trivia', book='celica', aplus='celica/v2',
+   pitch=("For sixteen years the Celica was a rally weapon. For the sixteen years either side of that, it was "
+          "something much quieter. In 1995, FIA scrutineers found a hidden device in the turbo plumbing of "
+          "Toyota&rsquo;s works rally car &mdash; a spring-loaded restrictor plate that let more air reach the "
+          "turbo than the rules allowed. FIA president Max Mosley called it the most ingenious thing he had "
+          "seen in thirty years of motorsport, right before banning the team for a year. Ninety verified "
+          "questions across ten parts &mdash; the secret name it shared with the Supra, three World Rally "
+          "Championship titles, and the engine the final Celica shared with a Lotus Elise."),
+   parts=[('The Celestial Coupe.', 'A halo car\u2019s affordable echo, 1970'),
+          ('Growing Up.', 'Second and third generations, 1978 to 1985'),
+          ('King of Africa.', 'The Twin-Cam Turbo and Group B, 1981 to 1985'),
+          ('The Split.', 'Front-wheel drive, and the Celica/Supra split'),
+          ('Three Titles.', 'The ST185 GT-Four, 1989 to 1994'),
+          ('The Device.', 'The ST205, the scandal, and the ban'),
+          ('Breaking Clean.', 'No turbo, no all-wheel drive, 2000 to 2006'),
+          ('Seven Codes.', 'Chassis codes across thirty-six years'),
+          ('The Long Goodbye.', 'Falling sales, and the final car'),
+          ('The Whole Story.', 'Records, rivals, and cross-generation stumpers')],
+   quiz=dict(top='Q53  &middot;  PART 6  &middot;  THE DEVICE',
+             q='What was the full scope of Toyota Team Europe&rsquo;s 1995 penalty?',
+             opts=['A fine only, with no suspension', 'Exclusion from 1995, plus a twelve-month suspension', 'A one-rally ban', 'Permanent expulsion from the WRC'], correct=1,
+             reveal=("Exclusion from 1995, plus a twelve-month suspension &mdash; the team lost its entire 1995 "
+                     "points total, then sat out all of 1996 too, the harshest penalty of the whole scandal.")),
+   also=[('supra', 'Toyota Supra Trivia', 'supra/supra-ebook-cover.jpg'),
+         ('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg'),
+         ('wrx', 'Subaru WRX Trivia', 'wrx/wrx-ebook-cover.jpg'),
+         ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'prelude': dict(
+   title_raw='Prelude Trivia & Fun Facts', short='Prelude Trivia', book='prelude', aplus='prelude/v2',
+   pitch=("In 1987, a two-door coupe did something no production car had ever done before: it steered from "
+          "all four wheels. No computer, no electric motor &mdash; just a mechanical system reacting to how "
+          "far and how fast the driver turned the wheel. It stayed in production for twenty-three years "
+          "before Honda quietly let it go in 2001, then brought the name back in 2026 as a manual-free hybrid "
+          "that shares nothing mechanical with the original. Ninety verified questions across ten parts "
+          "&mdash; the name Toyota trademarked first, the VTEC timeline most retellings get wrong, and the "
+          "torque-vectoring trick almost nobody remembers."),
+   parts=[('An Opening Movement.', 'Origins and the first generation, 1978'),
+          ('The Wedge.', 'Second generation and pop-up headlights, 1983'),
+          ('Steering History.', 'The world\u2019s first four-wheel steering, 1987'),
+          ('VTEC, At Last.', 'The fourth generation, 1991 to 1996'),
+          ('The Torque Trick.', 'ATTS and the fifth generation, 1996 to 2001'),
+          ('Setting the VTEC Record Straight.', 'Where VTEC really debuted, 1989'),
+          ('The Race It Never Ran.', 'Motorsport myths, and the JTCC reality'),
+          ('The Quiet End.', 'Sales, discontinuation, and a 25-year gap'),
+          ('Back for 2026.', 'The sixth generation\u2019s hybrid return'),
+          ('The Whole Story.', 'Cross-generation stumpers')],
+   quiz=dict(top='Q19  &middot;  PART 3  &middot;  STEERING HISTORY',
+             q='What world first did the third-generation Prelude achieve in 1987?',
+             opts=['First production car with anti-lock brakes', 'First mass-production car with four-wheel steering', 'First production car with a turbocharger', 'First production hybrid'], correct=1,
+             reveal=("First mass-production car with four-wheel steering &mdash; Honda&rsquo;s own heritage "
+                     "materials call it the first steering-angle-sensing four-wheel-steering system on a "
+                     "production car, full stop.")),
+   also=[('nsx', 'NSX Trivia', 'nsx/nsx-ebook-cover.jpg'),
+         ('civic', 'Civic Type R Trivia', 'civic-type-r/civic-type-r-ebook-cover.jpg'),
+         ('s2000', 'S2000 Trivia', 's2000/s2000-ebook-cover.jpg'),
+         ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
 }
 
 
