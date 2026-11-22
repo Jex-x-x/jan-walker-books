@@ -496,6 +496,64 @@ BOOKS = {
          ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg')],
    when='Coming soon',
    soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ '3000gt': dict(
+   title_raw='3000GT Trivia & Fun Facts', short='3000GT Trivia', book='3000gt', aplus='3000gt/v2',
+   pitch=("In Japan it was the GTO, a name borrowed from an Italian racing legend. In North America it was the "
+          "3000GT, and also the Stealth. It steered with all four wheels, had spoilers that moved by themselves "
+          "and a twin-turbo V6, just as Japan&rsquo;s economy began to soften. Then the money ran out and the "
+          "gadgets were dropped one by one. Ninety verified questions across ten parts &mdash; the pace car that "
+          "lost its job, the lightweight version that beat a Skyline, and a folding hardtop nobody had "
+          "marketed since 1959."),
+   parts=[('A Name With a History.', 'From a racing term to a Tokyo show car, 1969 to 1990'),
+          ('Under the Skin.', 'A saloon platform, a V6 and two turbochargers'),
+          ('The Gadgets.', 'Four-wheel steering, active aero, a tunable exhaust'),
+          ('The Twin Called Stealth.', 'The American version, a pace car and a Viper'),
+          ('On the Road.', 'Stopwatch figures, an NSX showdown, a few complaints'),
+          ('The Facelift.', 'The second series, 1994 to 1996'),
+          ('The Folding Roof.', 'The Spyder and its retractable hardtop'),
+          ('Japan Only.', 'The GTO MR, a footballer\u2019s edition, the price of being big'),
+          ('The Last Years.', 'The third series, 1997 to 2000'),
+          ('Relatives and Rivals.', 'The Starion, the Eclipse and the Illinois plant')],
+   quiz=dict(top='Q20  &middot;  PART 3  &middot;  THE GADGETS',
+             q='What drag coefficient did the first-series body achieve with its active aerodynamics?',
+             opts=['0.23', '0.28', '0.33', '0.38'], correct=2,
+             reveal=("0.33. The active aero control system, with pop-up headlights and moving spoilers, "
+                     "enhanced the &ldquo;coke bottle&rdquo; silhouette.")),
+   also=[('nsx', 'NSX Trivia', 'nsx/nsx-ebook-cover.jpg'),
+         ('300zx', '300ZX Trivia', 'z32/z32-ebook-cover.jpg'),
+         ('supra', 'Toyota Supra Trivia', 'supra/supra-ebook-cover.jpg'),
+         ('rx7', 'RX-7 Trivia', 'rx7/rx7-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
+ 'gr86': dict(
+   title_raw='86 & BRZ Trivia & Fun Facts', short='86 & BRZ Trivia', book='gr86', aplus='gr86/v2',
+   pitch=("One company wanted a small, light, rear-drive sports car. Another had a flat-four engine and no "
+          "appetite for building one alone. They said no to each other once, the project stopped for six "
+          "months, and then they tried again. The result was sold under five names, at least two badges and "
+          "a lot of colour options. Ninety verified questions across ten parts &mdash; why the engine is 86 "
+          "millimetres wide in two directions, how the twins were told apart, and the second generation "
+          "that came in yellow, green and orange."),
+   parts=[('Eight Six.', 'A name from 1983 and a monkey-coloured concept'),
+          ('The Boxer.', 'A flat-four with direct injection'),
+          ('Low and Light.', 'Weight balance, an aluminium bonnet, the tyres'),
+          ('Launch Day.', 'Tokyo, a plant in Gunma, a car with five names'),
+          ('Twins.', 'The BRZ, the 86 and what told them apart'),
+          ('Limited Runs.', 'Yellow, blue and Japan-only editions, 2013 to 2018'),
+          ('The Trophy Shelf.', 'The awards of 2012 and 2013'),
+          ('The Second Act.', 'The 2021 generation and a bigger flat-four'),
+          ('Special Editions of the 2020s.', 'Orange, yellow, green and eight battlecruisers'),
+          ('On the Track.', 'Super GT, drifting and a one-make series')],
+   quiz=dict(top='Q13  &middot;  PART 2  &middot;  THE BOXER',
+             q='What were the bore and stroke of the engine?',
+             opts=['79 mm by 91 mm', '86 mm by 86 mm', '92 mm by 75 mm', '94 mm by 86 mm'], correct=1,
+             reveal=("86 mm by 86 mm. That gave 1,998 cc, and the 86 mm figure was one of many references "
+                     "to the number hidden in the car.")),
+   also=[('ae86', 'AE86 Trivia', 'ae86/ae86-ebook-cover.jpg'),
+         ('supra', 'Toyota Supra Trivia', 'supra/supra-ebook-cover.jpg'),
+         ('wrx', 'Subaru WRX Trivia', 'wrx/wrx-ebook-cover.jpg'),
+         ('miata', 'Mazda MX-5 Miata Trivia', 'miata/miata-ebook-cover.jpg')],
+   when='Coming soon',
+   soon_line=('Printed and proofread, in the last checks before release \u00b7 paperback and Kindle, worldwide from Amazon')),
 }
 
 
