@@ -371,6 +371,7 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
   <div class="links">
     <a href="#quiz">The Exam</a>
     <a href="#garage">Cars &amp; Trucks</a>
+    <a href="#premium">Premium</a>
     <a href="#family">Family Table</a>
     <a href="#about">About</a>
     <a class="cta" href="#quiz">Prove It</a>
@@ -455,6 +456,18 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
       <p class="sub">From the roadster that saved the sports car to the rally sedan a rulebook forced into showrooms. Each book: 90 questions, 10 parts, zero recycled internet lists.</p>
     </div>
     <div class="shelf" id="car-shelf"></div>
+  </div>
+</section>
+
+<section id="premium">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Trivia &amp; Fun Facts · Premium Editions</div>
+      <h2>Premium Editions. Hardcover, full colour.</h2>
+      <div class="rule"></div>
+      <p class="sub">The same verified questions in a matte-finish hardcover, with a full-page colour image opening every part. A separate series, made to be given and kept.</p>
+    </div>
+    <div class="shelf" id="premium-shelf"></div>
   </div>
 </section>
 
@@ -543,6 +556,7 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
       <div class="list">
         <div class="h">Series</div>
         <a href="#garage">Trivia &amp; Fun Facts: Cars &amp; Trucks</a>
+        <a href="#premium">Trivia &amp; Fun Facts: Premium Editions</a>
         <a href="#family">Family Table Books</a>
         <a href="https://www.amazon.com/dp/B0H87S7S1P" target="_blank" rel="noopener">Halloween Trivia</a>
       </div>
@@ -721,6 +735,8 @@ function card(b) {
   return a;
 }
 CARS.forEach(b => document.getElementById('car-shelf').appendChild(card(b)));
+const PREMIUM = ['miata', 'miata2', 'supra', 'skyline', 'wrx', 'gwagon', 'pajerosport', 'tacoma', '4runner', 's2000', 'rx8', '300zx'];
+PREMIUM.forEach(sl => { const b = CARS.find(x => x.slug === sl); if (b) document.getElementById('premium-shelf').appendChild(card({ ...b, badge: 'Hardcover' })); });
 FAMILY.forEach(b => document.getElementById('family-shelf').appendChild(card(b)));
 
 const PUZZLES = [
