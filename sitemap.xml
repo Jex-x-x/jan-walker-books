@@ -56,4 +56,19 @@
   <url><loc>https://janwalkerbooks.com/de/books/wrx_de/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://janwalkerbooks.com/de/books/gwagon_de/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://janwalkerbooks.com/es/books/gwagon_es/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://janwalkerbooks.com/premium/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/corvette/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/rx8/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/miata2/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/tacoma/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/300zx/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/s2000/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/4runner/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/skyline/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/supra/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/miata/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/wrx/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/gwagon/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/pajerosport/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

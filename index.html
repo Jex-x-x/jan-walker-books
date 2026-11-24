@@ -371,7 +371,7 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
   <div class="links">
     <a href="#quiz">The Exam</a>
     <a href="#garage">Cars &amp; Trucks</a>
-    <a href="#premium">Premium</a>
+    <a href="/premium/">Premium</a>
     <a href="#family">Family Table</a>
     <a href="#about">About</a>
     <a class="cta" href="#quiz">Prove It</a>
@@ -460,14 +460,18 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
 </section>
 
 <section id="premium">
+  <style>#premium{background:#16171a;color:#f2ece2}#premium .sec-head h2,#premium .kicker{color:#f2ece2}#premium .kicker{color:#cdba96}#premium .sub{color:#a8a196}
+  #premium .pt{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px;margin:34px 0 30px}#premium .pt img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 24px 36px -20px #000}
+  #premium .go{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#16171a;background:#cdba96;padding:14px 24px;border-radius:2px}</style>
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Trivia &amp; Fun Facts · Premium Editions</div>
-      <h2>Premium Editions. Hardcover, full colour.</h2>
+      <h2>Premium Editions. A series of its own.</h2>
       <div class="rule"></div>
-      <p class="sub">The same verified questions in a matte-finish hardcover, with a full-page colour image opening every part. A separate series, made to be given and kept.</p>
+      <p class="sub">Full-colour matte hardcovers with a full-page image opening every part. Thirteen editions, each with its own page.</p>
     </div>
-    <div class="shelf" id="premium-shelf"></div>
+    <div class="pt"><a href="/premium/corvette/"><img src="/premium/img/corvette/front-s.jpg" alt="corvette premium hardcover cover" loading="lazy"></a><a href="/premium/gwagon/"><img src="/premium/img/gwagon/front-s.jpg" alt="gwagon premium hardcover cover" loading="lazy"></a><a href="/premium/supra/"><img src="/premium/img/supra/front-s.jpg" alt="supra premium hardcover cover" loading="lazy"></a><a href="/premium/skyline/"><img src="/premium/img/skyline/front-s.jpg" alt="skyline premium hardcover cover" loading="lazy"></a></div>
+    <a class="go" href="/premium/">See all Premium Editions &rarr;</a>
   </div>
 </section>
 
@@ -556,7 +560,7 @@ footer .reader a.tk:hover { color: #ff7a33; border-bottom-color: #ff7a33; }
       <div class="list">
         <div class="h">Series</div>
         <a href="#garage">Trivia &amp; Fun Facts: Cars &amp; Trucks</a>
-        <a href="#premium">Trivia &amp; Fun Facts: Premium Editions</a>
+        <a href="/premium/">Trivia &amp; Fun Facts: Premium Editions</a>
         <a href="#family">Family Table Books</a>
         <a href="https://www.amazon.com/dp/B0H87S7S1P" target="_blank" rel="noopener">Halloween Trivia</a>
       </div>
@@ -735,8 +739,6 @@ function card(b) {
   return a;
 }
 CARS.forEach(b => document.getElementById('car-shelf').appendChild(card(b)));
-const PREMIUM = ['miata', 'miata2', 'supra', 'skyline', 'wrx', 'gwagon', 'pajerosport', 'tacoma', '4runner', 's2000', 'rx8', '300zx'];
-PREMIUM.forEach(sl => { const b = CARS.find(x => x.slug === sl); if (b) document.getElementById('premium-shelf').appendChild(card({ ...b, badge: 'Hardcover' })); });
 FAMILY.forEach(b => document.getElementById('family-shelf').appendChild(card(b)));
 
 const PUZZLES = [
