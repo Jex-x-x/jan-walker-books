@@ -19,6 +19,9 @@ FONTS = K / 'covers' / 'fonts' / 'ofl' / 'static'
 
 # slug (адрес /premium/<slug>/), папка издания, название, подзаголовок, ASIN твёрдой, страница стандартной книги, крючок
 BOOKS = [
+ dict(slug='911', d=K/'p911/premium', pre='p911', title='911', asin='B0HSVN115H', std=None, q=120, new=True,
+      sub="What You Probably Didn't Know About the Rear-Engined Sports Car",
+      hook='It was meant to be the 901, until a French carmaker objected.'),
  dict(slug='corvette', d=KC, pre='corvette', title='Corvette', asin='B0HSSSMJ4F', std=None, q=120, new=True,
       sub="What You Probably Didn't Know About America's Sports Car",
       hook='It began as a secret project in 1951, with a fibreglass body meant to be a stopgap.'),
@@ -58,6 +61,7 @@ def read_pdf(b):
     b['pages'] = len(pdf)
     # «About this book»: первые абзацы страницы 2
     tx = ' '.join(l.strip() for l in pdf[1].get_text().split('\n')[1:])      # без заголовка «About this book»
+    tx = re.sub(r'(?<=[a-z])- (?=[a-z])', '', tx)      # перенос слова из PDF: «be- hind»
     sents = re.split(r'(?<=[.!?])\s+', tx)
     out = ''
     for sn in sents:

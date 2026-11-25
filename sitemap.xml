@@ -58,6 +58,7 @@
   <url><loc>https://janwalkerbooks.com/es/books/gwagon_es/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <url><loc>https://janwalkerbooks.com/premium/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://janwalkerbooks.com/premium/911/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://janwalkerbooks.com/premium/corvette/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://janwalkerbooks.com/premium/rx8/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://janwalkerbooks.com/premium/miata2/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
