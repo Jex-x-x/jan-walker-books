@@ -19,7 +19,7 @@ FONTS = K / 'covers' / 'fonts' / 'ofl' / 'static'
 
 # slug (адрес /premium/<slug>/), папка издания, название, подзаголовок, ASIN твёрдой, страница стандартной книги, крючок
 BOOKS = [
- dict(slug='911', d=K/'p911/premium', pre='p911', title='911', asin='B0HSVN115H', std=None, q=120, new=True,
+ dict(slug='911', d=K/'p911/premium', pre='p911', title='Porsche 911', asin='B0HSVN115H', std=None, q=120, new=True,
       sub="What You Probably Didn't Know About the Rear-Engined Sports Car",
       hook='It was meant to be the 901, until a French carmaker objected.'),
  dict(slug='corvette', d=KC, pre='corvette', title='Corvette', asin='B0HSSSMJ4F', std=None, q=120, new=True,

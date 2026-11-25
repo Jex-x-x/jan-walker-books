@@ -4,7 +4,7 @@
 import re
 from pathlib import Path
 PAGE = Path(__file__).parent / 'index.html'
-TEASER = ['corvette', 'gwagon', 'supra', 'skyline']
+TEASER = ['911', 'corvette', 'gwagon', 'supra', 'skyline']
 s = PAGE.read_text()
 
 s = re.sub(r'<section id="premium">.*?</section>\n\n', '', s, flags=re.S)
@@ -22,7 +22,7 @@ section = f'''<section id="premium">
       <div class="kicker">Trivia &amp; Fun Facts · Premium Editions</div>
       <h2>Premium Editions. A series of its own.</h2>
       <div class="rule"></div>
-      <p class="sub">Full-colour matte hardcovers with a full-page image opening every part. Thirteen editions, each with its own page.</p>
+      <p class="sub">Full-colour matte hardcovers with a full-page image opening every part. Fourteen editions, each with its own page.</p>
     </div>
     <div class="pt">{imgs}</div>
     <a class="go" href="/premium/">See all Premium Editions &rarr;</a>
